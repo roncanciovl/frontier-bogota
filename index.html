@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frontier Loft Studio · Bogotá · Direct Sale by Owner / Venta Directa</title>
+<meta name="description" content="Modern loft studio for sale by owner in Frontier Building, Centro Internacional, Bogotá. 36.3 m² (391 sq ft), 2 baths, private parking, low HOA (~USD $68/mo).">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://roncanciovl.github.io/frontier-bogota/">
+<meta property="og:title" content="Frontier Loft Studio · Centro Internacional, Bogotá · 2 Baths + Parking">
+<meta property="og:description" content="Direct sale by owner (zero broker fee). COP 370M (≈ USD $106.9k) · 36.3 m² / 391 sq ft · 2 bathrooms · Private parking · HOA COP 234,000 (~$68/mo).">
+<meta property="og:image" content="https://roncanciovl.github.io/frontier-bogota/assets/01_Portada_Sala_Alcoba_Amoblado_Ref.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --brand: #102a31;
+    --brand-soft: #1b434d;
+    --gold: #d7b26d;
+    --gold-light: #f0cf8c;
+    --bg: #f6f8f7;
+    --card: #ffffff;
+    --ink: #162a30;
+    --muted: #526a71;
+    --line: #dce6e4;
+    --radius: 14px;
+    --shadow: 0 10px 28px rgba(16, 42, 49, 0.07);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+  }
+  a { color: inherit; }
+
+  /* Sticky Top Bar */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(16, 42, 49, 0.94);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .brand {
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .brand-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: inline-block;
+  }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .lang-switch {
+    display: inline-flex;
+    background: rgba(255,255,255,0.12);
+    border-radius: 999px;
+    padding: 3px;
+  }
+  .lang-btn {
+    border: 0;
+    background: transparent;
+    color: #d9e6e4;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 5px 11px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+  }
+  .lang-btn.active {
+    background: var(--gold);
+    color: var(--brand);
+  }
+  .btn-wa-sm {
+    background: #25d366;
+    color: #0b2416;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 540px;
+    display: flex;
+    align-items: flex-end;
+    background: var(--brand);
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 45%;
+    filter: brightness(0.74);
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(16,42,49,0.35) 0%, rgba(16,42,49,0.28) 38%, rgba(16,42,49,0.92) 100%);
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 56px 20px 44px;
+    color: #fff;
+  }
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .pill {
+    display: inline-block;
+    padding: 5px 13px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .pill-gold {
+    background: var(--gold);
+    color: var(--brand);
+    border-color: transparent;
+  }
+  .hero h1 {
+    margin: 0 0 8px;
+    font-size: clamp(1.9rem, 4.2vw, 3.1rem);
+    line-height: 1.08;
+    letter-spacing: -0.5px;
+  }
+  .hero-sub {
+    margin: 0 0 20px;
+    font-size: clamp(0.98rem, 2vw, 1.15rem);
+    color: #dce9e7;
+    max-width: 760px;
+  }
+  .price-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+    margin-bottom: 22px;
+  }
+  .price-main {
+    font-size: clamp(1.7rem, 3.6vw, 2.45rem);
+    font-weight: 800;
+    color: var(--gold-light);
+  }
+  .price-usd {
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.22);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 22px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
+    transition: transform 0.14s ease, opacity 0.14s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary {
+    background: #25d366;
+    color: #082012;
+  }
+  .btn-outline {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.35);
+  }
+
+  /* Layout */
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 36px 20px;
+  }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: -28px;
+    position: relative;
+    z-index: 5;
+  }
+  .kpi {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px 14px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .kpi .v {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--brand);
+    line-height: 1.15;
+  }
+  .kpi .l {
+    font-size: 0.84rem;
+    color: var(--muted);
+    margin-top: 5px;
+  }
+
+  section.block { margin-top: 44px; }
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #8f6d2e;
+    margin-bottom: 6px;
+  }
+  h2.sec-title {
+    margin: 0 0 12px;
+    font-size: clamp(1.4rem, 2.8vw, 1.95rem);
+    color: var(--brand);
+    line-height: 1.2;
+  }
+  .sec-lead {
+    color: var(--muted);
+    max-width: 780px;
+    margin: 0 0 22px;
+    font-size: 1rem;
+  }
+
+  /* Gallery */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .g-item {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(16,42,49,0.05);
+    transition: transform 0.16s ease;
+    position: relative;
+  }
+  .g-item:hover { transform: translateY(-2px); }
+  .g-item img {
+    width: 100%;
+    height: 215px;
+    object-fit: cover;
+    display: block;
+    background: #eef3f2;
+  }
+  .g-item.plan img {
+    object-fit: contain;
+    background: #fff;
+    padding: 8px;
+  }
+  .g-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(16,42,49,0.82);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 999px;
+  }
+  .g-tag.empty { background: #1e6b52; }
+  .g-cap {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .notice {
+    margin-top: 14px;
+    background: #eef4f2;
+    border-left: 4px solid var(--gold);
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #243b42;
+  }
+
+  /* Grids & Cards */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+    box-shadow: var(--shadow);
+  }
+  .card h3 {
+    margin: 0 0 12px;
+    font-size: 1.12rem;
+    color: var(--brand);
+  }
+  .list {
+    margin: 0;
+    padding-left: 18px;
+    color: #284047;
+    font-size: 0.95rem;
+  }
+  .list li { margin-bottom: 8px; }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .chip {
+    background: #e9f1ef;
+    color: var(--brand);
+    font-weight: 700;
+    font-size: 0.83rem;
+    padding: 6px 12px;
+    border-radius: 8px;
+  }
+
+  /* Safe Foreign Purchase Steps */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .step {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+  }
+  .step-num {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: var(--gold-light);
+    font-weight: 800;
+    font-size: 0.88rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .step h4 {
+    margin: 0 0 6px;
+    font-size: 0.98rem;
+    color: var(--brand);
+  }
+  .step p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+
+  /* Map */
+  .map-frame {
+    width: 100%;
+    height: 310px;
+    border: 0;
+    border-radius: 10px;
+    display: block;
+  }
+
+  /* Contact Banner */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-soft) 100%);
+    color: #fff;
+    border-radius: 18px;
+    padding: 34px 28px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 16px 34px rgba(16,42,49,0.18);
+  }
+  .cta-banner h2 { margin: 0 0 6px; font-size: 1.65rem; }
+  .cta-banner p { margin: 0; color: #d5e4e2; max-width: 580px; }
+
+  footer {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+  }
+
+  /* Floating WhatsApp */
+  .float-wa {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 45;
+    background: #25d366;
+    color: #082012;
+    font-weight: 800;
+    font-size: 0.92rem;
+    padding: 12px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(9, 20, 24, 0.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 92vw;
+    max-height: 78vh;
+    border-radius: 10px;
+    background: #fff;
+  }
+  .lb-cap {
+    color: #e6f0ee;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  .lb-close, .lb-prev, .lb-next {
+    position: fixed;
+    background: rgba(255,255,255,0.16);
+    color: #fff;
+    border: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+  .lb-close { top: 18px; right: 18px; }
+  .lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+  .lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    .kpi-grid, .steps { grid-template-columns: repeat(2, 1fr); }
+    .gallery, .grid-2 { grid-template-columns: 1fr; }
+    .hero { min-height: 480px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand"><span class="brand-dot"></span> FRONTIER · BOGOTÁ</div>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language switch">
+        <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="btn-wa-sm wa-link" href="https://wa.me/573043656226" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="hero-bg" src="assets/01_Portada_Sala_Alcoba_Amoblado_Ref.jpg" alt="Frontier Loft Studio Bogota">
+  <div class="hero-inner">
+    <div class="badges">
+      <span class="pill" data-i18n="badge1">Venta directa · Sin comisión de corredor</span>
+      <span class="pill pill-gold" data-i18n="badge2">2 baños + parqueadero privado</span>
+    </div>
+    <h1 data-i18n="heroTitle">Apartaestudio Loft · Edificio Frontier</h1>
+    <p class="hero-sub" data-i18n="heroSub">San Martín / Centro Internacional, Bogotá · A 1 cuadra de la Carrera 7.ª y junto al C.C. San Martín</p>
+    <div class="price-row">
+      <span class="price-main">COP $370.000.000</span>
+      <span class="price-usd" data-i18n="priceUsd">≈ USD $106.900* · Negociables</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary wa-link" href="https://wa.me/573043656226" target="_blank" rel="noopener" data-i18n="ctaWa">Escribir por WhatsApp (Tour / Visita)</a>
+      <a class="btn btn-outline" id="pdf-btn" href="docs/Frontier_Ficha_ES.pdf" target="_blank" rel="noopener" data-i18n="ctaPdf">Descargar Ficha PDF</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="v" data-i18n="kpi1v">36,3 m²</div>
+      <div class="l" data-i18n="kpi1l">Construidos · 33,46 m² privados<br>(391 sq ft / 360 sq ft)</div>
+    </div>
+    <div class="kpi">
+      <div class="v" data-i18n="kpi2v">2 baños</div>
+      <div class="l" data-i18n="kpi2l">Privado completo +<br>baño social independiente</div>
+    </div>
+    <div class="kpi">
+      <div class="v" data-i18n="kpi3v">1 garaje</div>
+      <div class="l" data-i18n="kpi3l">Parqueadero privado<br>incluido en el precio</div>
+    </div>
+    <div class="kpi">
+      <div class="v" data-i18n="kpi4v">$234.000/mes</div>
+      <div class="l" data-i18n="kpi4l">Administración ≈ USD $68/mo<br>Estrato 4 · Piso 6</div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="block" id="galeria">
+    <div class="eyebrow" data-i18n="galEye">Galería verificada</div>
+    <h2 class="sec-title" data-i18n="galTitle">Espacios, acabados y plano de distribución</h2>
+    <p class="sec-lead" data-i18n="galLead">Haz clic en cualquier imagen para ampliarla. Las primeras fotos muestran el potencial amoblado y las mejoras de iluminación; las siguientes muestran cocina, baños y vestier sin muebles, más el plano de referencia.</p>
+
+    <div class="gallery" id="gallery-grid"></div>
+
+    <div class="notice" data-i18n="furnNotice">
+      <strong>Nota de transparencia:</strong> El apartamento se vende y entrega desocupado y <strong>SIN MUEBLES</strong>. Las fotografías con mobiliario (archivo sep. 2023) son referencia de distribución e iluminación arquitectónica.
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS & LOCATION -->
+  <section class="block" id="detalles">
+    <div class="eyebrow" data-i18n="detEye">Por qué destaca</div>
+    <h2 class="sec-title" data-i18n="detTitle">Un loft raro en el Centro Internacional</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3 data-i18n="specTitle">Características del apartamento</h3>
+        <ul class="list" id="spec-list"></ul>
+      </div>
+      <div class="card">
+        <h3 data-i18n="bldgTitle">Edificio Frontier y entorno caminable</h3>
+        <div class="chips" id="amenities-chips"></div>
+        <ul class="list" id="loc-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFE DIRECT PURCHASE -->
+  <section class="block" id="compra-segura">
+    <div class="eyebrow" data-i18n="safeEye">Trato directo · 0% comisión</div>
+    <h2 class="sec-title" data-i18n="safeTitle">Compra directa y segura (en Colombia o desde el exterior)</h2>
+    <p class="sec-lead" data-i18n="safeLead">Ahorra el sobrecosto de intermediación manteniendo total seguridad jurídica. Trabajamos con total transparencia junto a tu abogado inmobiliario independiente.</p>
+    <div class="steps" id="steps-grid"></div>
+  </section>
+
+  <!-- MAP -->
+  <section class="block" id="ubicacion">
+    <div class="eyebrow" data-i18n="mapEye">Ubicación exacta del edificio</div>
+    <h2 class="sec-title" data-i18n="mapTitle">Barrio San Martín · Centro Internacional, Bogotá</h2>
+    <div class="card" style="padding:12px;">
+      <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Edificio+Frontier+Calle+33+6-37+Bogota+Colombia&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        title="Mapa Edificio Frontier Bogota"></iframe>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="block">
+    <div class="cta-banner">
+      <div>
+        <h2 data-i18n="ctaTitle">¿Te gustaría visitarlo o hacer un tour en vivo por video?</h2>
+        <p data-i18n="ctaDesc">Escríbeme directo por WhatsApp (+57 304 365 6226). Atiendo en español e inglés, comparto soportes al día y coordinamos visita presencial o videollamada.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary wa-link" href="https://wa.me/573043656226" target="_blank" rel="noopener" data-i18n="ctaBtn1">Hablar con el propietario</a>
+        <a class="btn btn-outline" id="pdf-btn-2" href="docs/Frontier_Ficha_ES.pdf" target="_blank" rel="noopener" data-i18n="ctaBtn2">Ver Ficha PDF</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer data-i18n="footerNote">
+  *Las cifras en USD son una referencia aproximada calculada con TRM ~COP 3.462/USD (nov. 2026); el precio vinculante de venta está expresado en pesos colombianos (COP $370.000.000). Área privada según certificado de tradición: 33,46 m² (360 sq ft); área construida según avalúo: 36,30 m² (391 sq ft). Entrega desocupado, sin muebles. Nota sobre visas: por sí solo este valor está por debajo del umbral de 350 SMMLV para Visa M de inversionista en Colombia. Contacto directo: WhatsApp +57 304 365 6226.
+</footer>
+
+<a class="float-wa wa-link" href="https://wa.me/573043656226" target="_blank" rel="noopener" data-i18n="floatWa">WhatsApp · Propietario</a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="if(event.target===this) closeLb()">
+  <button class="lb-close" onclick="closeLb()" aria-label="Close">&times;</button>
+  <button class="lb-prev" onclick="moveLb(-1)" aria-label="Previous">&#8249;</button>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-cap" id="lb-cap"></div>
+  <button class="lb-next" onclick="moveLb(1)" aria-label="Next">&#8250;</button>
+</div>
+
+<script>
+const GALLERY = [
+  { src: 'assets/01_Portada_Sala_Alcoba_Amoblado_Ref.jpg', type: 'ref',
+    es: 'Espacio loft integrado y gran ventanal (referencia amoblado)',
+    en: 'Open-plan loft living & sleeping space (furnished reference)' },
+  { src: 'assets/02_Sala_Iluminacion_Lineal_Ref.jpg', type: 'ref',
+    es: 'Sala e iluminación arquitectónica lineal (referencia amoblado)',
+    en: 'Living area & linear architectural lighting (furnished reference)' },
+  { src: 'assets/03_Zona_Alcoba_Iluminacion_Ref.jpg', type: 'ref',
+    es: 'Zona de alcoba e iluminación LED (referencia amoblado)',
+    en: 'Sleeping area & recessed LED lighting (furnished reference)' },
+  { src: 'assets/04_Acabados_Iluminacion_Ref.jpg', type: 'ref',
+    es: 'Detalle de iluminación y acabados de pared (referencia)',
+    en: 'Lighting & wall finish detail (reference)' },
+  { src: 'assets/05_Cocina_Abierta_SinMuebles.jpg', type: 'empty',
+    es: 'Cocina abierta con mesón en granito y extractor (sin muebles)',
+    en: 'Open kitchen with granite counter & extractor hood (unfurnished)' },
+  { src: 'assets/06_Bano_Principal.jpg', type: 'empty',
+    es: 'Baño privado completo con división en vidrio templado',
+    en: 'Full ensuite bathroom with tempered glass shower' },
+  { src: 'assets/07_Bano_Social.jpg', type: 'empty',
+    es: 'Baño social independiente para visitas',
+    en: 'Separate guest half-bathroom' },
+  { src: 'assets/08_Vestier.jpg', type: 'empty',
+    es: 'Vestier amplio en madera con cajonera y doble barra',
+    en: 'Spacious wooden walk-in closet with drawers & double rail' },
+  { src: 'assets/09_Plano_Referencia_Serie_5a.jpg', type: 'plan',
+    es: 'Plano arquitectónico de referencia — Serie 5a (Frontier)',
+    en: 'Reference architectural floor plan — Serie 5a (Frontier)' }
+];
+
+const COPY = {
+  es: {
+    badge1: 'Venta directa · Sin comisión de corredor',
+    badge2: '2 baños + parqueadero privado',
+    heroTitle: 'Apartaestudio Loft · Edificio Frontier',
+    heroSub: 'San Martín / Centro Internacional, Bogotá · A 1 cuadra de la Carrera 7.ª y junto al C.C. San Martín',
+    priceUsd: '≈ USD $106.900* · Negociables',
+    ctaWa: 'Escribir por WhatsApp (Tour / Visita)',
+    ctaPdf: 'Descargar Ficha PDF (ES)',
+    kpi1v: '36,3 m²',
+    kpi1l: 'Construidos · 33,46 m² privados<br>(391 sq ft / 360 sq ft)',
+    kpi2v: '2 baños',
+    kpi2l: 'Privado completo +<br>baño social independiente',
+    kpi3v: '1 garaje',
+    kpi3l: 'Parqueadero privado<br>incluido en el precio',
+    kpi4v: '$234.000/mes',
+    kpi4l: 'Administración ≈ USD $68/mes<br>Estrato 4 · Piso 6',
+    galEye: 'Galería verificada',
+    galTitle: 'Espacios, acabados y plano de distribución',
+    galLead: 'Haz clic en cualquier imagen para ampliarla. Las primeras fotos muestran el potencial amoblado y las mejoras de iluminación; las siguientes muestran cocina, baños y vestier sin muebles, más el plano de referencia.',
+    furnNotice: '<strong>Nota de transparencia:</strong> El apartamento se vende y entrega desocupado y <strong>SIN MUEBLES</strong>. Las fotografías con mobiliario (archivo sep. 2023) son referencia de distribución e iluminación arquitectónica.',
+    detEye: 'Por qué destaca',
+    detTitle: 'Una combinación difícil de encontrar en el Centro Internacional',
+    specTitle: 'Características del apartamento',
+    bldgTitle: 'Edificio Frontier y entorno caminable',
+    specs: [
+      '<strong>Desarrolladores top:</strong> proyecto construido por Londoño Gómez Propiedad Raíz y Arquitectura &amp; Concreto.',
+      '<strong>Área verificada:</strong> 36,30 m² construidos (391 sq ft) / 33,46 m² privados (360 sq ft), piso 6 con ascensor.',
+      '<strong>2 baños:</strong> baño principal completo con división en vidrio + baño social independiente (muy escaso en apartaestudios del sector).',
+      '<strong>Vestier y cocina:</strong> amplio vestier en madera con 6 cajones y cocina abierta con mesón en granito y extractor.',
+      '<strong>1 parqueadero privado</strong> incluido en el precio.',
+      '<strong>Administración competitiva:</strong> $234.000/mes (≈ USD $68) · Estrato 4 · Entrega desocupado, sin muebles.'
+    ],
+    amenities: ['Gimnasio', 'Terraza BBQ', 'Teatrino', 'Lavandería comunal', 'Ascensor · Piso 6'],
+    loc: [
+      'Junto al <strong>Centro Comercial San Martín</strong> y a 1 cuadra de la Carrera Séptima.',
+      'A pasos del <strong>Centro Internacional</strong>, Museo Nacional, Parque Nacional y restaurantes de <strong>La Macarena</strong>.',
+      'Alta demanda por cercanía a <strong>U. Javeriana, CESA, U. de los Andes, Tadeo y Distrital</strong>.'
+    ],
+    safeEye: 'Trato directo · 0% comisión',
+    safeTitle: 'Compra directa y segura (en Colombia o desde el exterior)',
+    safeLead: 'Evita sobrecostos de intermediación con total transparencia jurídica. Bienvenido tu abogado inmobiliario independiente.',
+    steps: [
+      { n: '1', t: 'Visita o Tour en Vivo', p: 'Conoce el apto en persona o hacemos videollamada en tiempo real mostrando interior, parqueadero y zonas comunes.' },
+      { n: '2', t: 'Estudio de Títulos', p: 'Entrego Certificado de Tradición reciente, paz y salvos de administración/predial y escritura base para revisión de tu abogado.' },
+      { n: '3', t: 'Giro Legal (Formulario 4)', p: 'Si compras desde el exterior, estructuramos transferencia bancaria con Declaración de Cambio ante el Banco de la República.' },
+      { n: '4', t: 'Escritura en Notaría', p: 'Firma presencial en Bogotá o a distancia mediante Poder Especial apostillado, con desembolso bancario seguro.' }
+    ],
+    mapEye: 'Ubicación exacta del edificio',
+    mapTitle: 'Barrio San Martín · Centro Internacional, Bogotá',
+    ctaTitle: '¿Te gustaría visitarlo o agendar un tour en vivo por video?',
+    ctaDesc: 'Escríbeme directo por WhatsApp (+57 304 365 6226). Atiendo en español e inglés y comparto soportes al día sin intermediarios.',
+    ctaBtn1: 'Hablar con el propietario',
+    ctaBtn2: 'Ver Ficha PDF (ES)',
+    floatWa: 'WhatsApp · Propietario',
+    tagRef: 'Referencia amoblado',
+    tagEmpty: 'Sin muebles',
+    tagPlan: 'Plano referencia',
+    pdfHref: 'docs/Frontier_Ficha_ES.pdf',
+    waMsg: 'Hola, vi la página del apartaestudio en Edificio Frontier ($370M) y me gustaría recibir más información / agendar visita.',
+    footerNote: '*Las cifras en USD son una referencia aproximada calculada con TRM ~COP 3.462/USD (nov. 2026); el precio vinculante de venta está expresado en pesos colombianos (COP $370.000.000). Área privada según certificado de tradición: 33,46 m² (360 sq ft); área construida según avalúo: 36,30 m² (391 sq ft). Entrega desocupado, sin muebles. Nota sobre visas: por sí solo este valor está por debajo del umbral de 350 SMMLV para Visa M de inversionista en Colombia. Contacto directo: WhatsApp +57 304 365 6226.'
+  },
+  en: {
+    badge1: 'For Sale By Owner · 0% Broker Fee',
+    badge2: '2 Baths + Private Parking',
+    heroTitle: 'Modern Loft Studio · Frontier Building',
+    heroSub: 'San Martín / Centro Internacional, Bogotá · 1 block off Carrera 7 & next to San Martín Mall',
+    priceUsd: '≈ USD $106,900* · Negotiable',
+    ctaWa: 'Message Owner on WhatsApp',
+    ctaPdf: 'Download English PDF Brochure',
+    kpi1v: '391 sq ft',
+    kpi1l: '36.3 m² built · 360 sq ft net<br>(33.46 m² registered private)',
+    kpi2v: '2 Baths',
+    kpi2l: 'Full ensuite bathroom +<br>separate guest half-bath',
+    kpi3v: '1 Garage',
+    kpi3l: 'Deeded private parking<br>included in asking price',
+    kpi4v: '~$68/mo',
+    kpi4l: 'HOA COP 234,000/month<br>Estrato 4 · 6th Floor',
+    galEye: 'Verified Gallery',
+    galTitle: 'Interior, Finishes & Floor Plan',
+    galLead: 'Click any photo to enlarge. The first images show the furnished layout potential and upgraded LED lighting; subsequent photos show the empty kitchen, bathrooms, walk-in closet, and reference floor plan.',
+    furnNotice: '<strong>Transparency note:</strong> The apartment is sold <strong>UNFURNISHED</strong> and delivered vacant. Furnished photos (Sep 2023 archive) illustrate layout potential and architectural lighting upgrades.',
+    detEye: 'Why It Stands Out',
+    detTitle: 'A Rare Studio Combo in Bogotá’s Cultural & Business Core',
+    specTitle: 'Apartment Specifications',
+    bldgTitle: 'Frontier Building & Walkable Location',
+    specs: [
+      '<strong>Top-tier builders:</strong> developed by Londoño Gómez &amp; Arquitectura &amp; Concreto.',
+      '<strong>Verified size:</strong> 391 sq ft (36.30 m²) built / 360 sq ft (33.46 m²) registered private area, 6th floor with elevator.',
+      '<strong>2 Bathrooms:</strong> full ensuite with tempered glass shower + separate guest bathroom (rare for studios in this district).',
+      '<strong>Walk-in closet &amp; kitchen:</strong> large wooden walk-in closet with 6 drawers + open granite-counter kitchen with extractor hood.',
+      '<strong>Deeded private parking space</strong> included in the asking price.',
+      '<strong>Ultra-low HOA:</strong> COP 234,000/mo (≈ USD $68/mo) · Estrato 4 · Delivered vacant &amp; unfurnished.'
+    ],
+    amenities: ['Gym', 'Rooftop BBQ Terrace', 'Screening Room', 'Communal Laundry', 'Elevator · 6th Floor'],
+    loc: [
+      'Right next to <strong>San Martín Shopping Center</strong> and 1 block from Carrera Séptima.',
+      'Walking distance to <strong>Centro Internacional</strong>, Museo Nacional, Parque Nacional &amp; <strong>La Macarena</strong> restaurants.',
+      'Close to Javeriana, CESA, Los Andes, Tadeo &amp; Distrital universities.'
+    ],
+    safeEye: 'Direct Owner Sale · Zero Commission',
+    safeTitle: 'Safe Direct Purchase for Foreign & Overseas Buyers',
+    safeLead: 'Skip the 3% agency markup without sacrificing legal peace of mind. Your independent bilingual real estate attorney is welcome at every step.',
+    steps: [
+      { n: '1', t: 'In-Person or Live Video Tour', p: 'Tour in person in Bogotá or schedule a live WhatsApp/Zoom walkthrough of the studio, garage & building amenities.' },
+      { n: '2', t: 'Independent Title Check', p: 'Fresh Certificado de Tradición y Libertad, HOA & tax clearances, and bylaws provided for your lawyer’s due diligence.' },
+      { n: '3', t: 'Legal Wire (Form F4)', p: 'Foreign funds enter legally via commercial bank wire registered with Banco de la República (Form F4) to protect future repatriation.' },
+      { n: '4', t: 'Notary Closing', p: 'Close in person at a Bogotá Notary or remotely via an apostilled Power of Attorney (Poder Especial) with secure bank payment.' }
+    ],
+    mapEye: 'Building Location',
+    mapTitle: 'San Martín · Centro Internacional, Bogotá',
+    ctaTitle: 'Want an in-person viewing or a live video walkthrough?',
+    ctaDesc: 'Message me directly on WhatsApp (+57 304 365 6226). I reply in English & Spanish and can share full documentation directly.',
+    ctaBtn1: 'Chat with Owner on WhatsApp',
+    ctaBtn2: 'Open English PDF',
+    floatWa: 'WhatsApp · Owner',
+    tagRef: 'Furnished ref.',
+    tagEmpty: 'Unfurnished',
+    tagPlan: 'Floor plan',
+    pdfHref: 'docs/Frontier_Brochure_EN.pdf',
+    waMsg: 'Hi! I saw the Frontier Building loft studio listing (COP 370M / ~$106.9k) and would like more details or to schedule a viewing / live video tour.',
+    footerNote: '*USD figures are approximate reference conversions based on Colombia’s official TRM (~COP 3,462/USD, Nov 2026); the binding sale price is in Colombian Pesos (COP 370,000,000). Registered private area is 33.46 m² (360 sq ft) per title deed and 36.30 m² (391 sq ft) built per appraisal. Delivered vacant & unfurnished. Visa note: standalone price is below Colombia’s 350 SMMLV Investor M-Visa threshold. Direct owner WhatsApp: +57 304 365 6226.'
+  }
+};
+
+let currentLang = 'es';
+let lbIndex = 0;
+
+function renderGallery() {
+  const c = COPY[currentLang];
+  const grid = document.getElementById('gallery-grid');
+  grid.innerHTML = GALLERY.map((item, idx) => {
+    const tagTxt = item.type === 'ref' ? c.tagRef : (item.type === 'plan' ? c.tagPlan : c.tagEmpty);
+    const tagCls = item.type === 'empty' ? 'g-tag empty' : 'g-tag';
+    const itemCls = item.type === 'plan' ? 'g-item plan' : 'g-item';
+    return `<div class="${itemCls}" onclick="openLb(${idx})">
+      <span class="${tagCls}">${tagTxt}</span>
+      <img src="${item.src}" alt="${item[currentLang]}" loading="lazy">
+      <div class="g-cap">${item[currentLang]}</div>
+    </div>`;
+  }).join('');
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  const c = COPY[lang];
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (c[key] !== undefined) el.innerHTML = c[key];
+  });
+
+  document.getElementById('spec-list').innerHTML = c.specs.map(s => `<li>${s}</li>`).join('');
+  document.getElementById('amenities-chips').innerHTML = c.amenities.map(a => `<span class="chip">${a}</span>`).join('');
+  document.getElementById('loc-list').innerHTML = c.loc.map(l => `<li>${l}</li>`).join('');
+  document.getElementById('steps-grid').innerHTML = c.steps.map(s => `
+    <div class="step">
+      <div class="step-num">${s.n}</div>
+      <h4>${s.t}</h4>
+      <p>${s.p}</p>
+    </div>`).join('');
+
+  document.getElementById('pdf-btn').href = c.pdfHref;
+  document.getElementById('pdf-btn-2').href = c.pdfHref;
+
+  const waUrl = 'https://wa.me/573043656226?text=' + encodeURIComponent(c.waMsg);
+  document.querySelectorAll('.wa-link').forEach(a => a.href = waUrl);
+
+  renderGallery();
+  try { localStorage.setItem('frontier_lang', lang); } catch(e) {}
+}
+
+function openLb(idx) {
+  lbIndex = idx;
+  updateLb();
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLb() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+function moveLb(dir) {
+  lbIndex = (lbIndex + dir + GALLERY.length) % GALLERY.length;
+  updateLb();
+}
+function updateLb() {
+  const item = GALLERY[lbIndex];
+  document.getElementById('lb-img').src = item.src;
+  document.getElementById('lb-cap').textContent = `${lbIndex + 1} / ${GALLERY.length} — ${item[currentLang]}`;
+}
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowRight') moveLb(1);
+  if (e.key === 'ArrowLeft') moveLb(-1);
+});
+
+(function init() {
+  const params = new URLSearchParams(window.location.search);
+  const qLang = params.get('lang');
+  const saved = (() => { try { return localStorage.getItem('frontier_lang'); } catch(e) { return null; } })();
+  const browserEn = (navigator.language || '').toLowerCase().startsWith('en');
+  const initial = (qLang === 'en' || qLang === 'es') ? qLang : (saved || (browserEn ? 'en' : 'es'));
+  setLang(initial);
+})();
+</script>
+</body>
+</html>
