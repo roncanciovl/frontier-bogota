@@ -377,6 +377,85 @@
     border-radius: 8px;
   }
 
+  /* Urban Future & Metro Section */
+  .future-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .f-stat {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-soft) 100%);
+    color: #fff;
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+  }
+  .f-stat .fv {
+    font-size: 1.38rem;
+    font-weight: 800;
+    color: var(--gold-light);
+    line-height: 1.15;
+  }
+  .f-stat .fl {
+    font-size: 0.85rem;
+    color: #dbe8e6;
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+  .render-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .r-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 0.16s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .r-card:hover { transform: translateY(-3px); }
+  .r-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+  .r-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(16,42,49,0.86);
+    color: var(--gold-light);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.4px;
+  }
+  .r-body {
+    padding: 15px 16px 17px;
+    flex: 1;
+  }
+  .r-body h4 {
+    margin: 0 0 6px;
+    font-size: 1.02rem;
+    color: var(--brand);
+    line-height: 1.25;
+  }
+  .r-body p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.48;
+  }
+
   /* Safe Foreign Purchase Steps */
   .steps {
     display: grid;
@@ -507,7 +586,7 @@
   /* Responsive */
   @media (max-width: 860px) {
     .kpi-grid, .steps { grid-template-columns: repeat(2, 1fr); }
-    .gallery, .grid-2 { grid-template-columns: 1fr; }
+    .gallery, .grid-2, .future-stats, .render-grid { grid-template-columns: 1fr; }
     .hero { min-height: 480px; }
   }
 </style>
@@ -597,6 +676,20 @@
     </div>
   </section>
 
+  <!-- URBAN FUTURE & BOGOTA METRO -->
+  <section class="block" id="futuro-metro">
+    <div class="eyebrow" data-i18n="futEye">Entorno en transformación · Conectividad 2027–2028</div>
+    <h2 class="sec-title" data-i18n="futTitle">El futuro del Centro Internacional y el Metro de Bogotá</h2>
+    <p class="sec-lead" data-i18n="futLead">Frontier se encuentra en el corredor de mayor transformación de movilidad y renovación urbana de Bogotá, a pocos minutos caminando del eje de la Avenida Caracas (Calles 32–34) y de la futura Estación Central de la Calle 26.</p>
+
+    <div class="future-stats" id="future-stats"></div>
+    <div class="render-grid" id="render-grid"></div>
+
+    <div class="notice" data-i18n="futNotice">
+      <strong>Nota ilustrativa:</strong> Las imágenes de esta sección son visualizaciones arquitectónicas conceptuales del entorno futuro (no corresponden a fotos actuales ni comprometen obras a cargo del vendedor). Los hitos del Metro corresponden al avance oficial público reportado al segundo semestre de 2026.
+    </div>
+  </section>
+
   <!-- SAFE DIRECT PURCHASE -->
   <section class="block" id="compra-segura">
     <div class="eyebrow" data-i18n="safeEye">Trato directo · 0% comisión</div>
@@ -677,6 +770,24 @@ const GALLERY = [
     en: 'Reference architectural floor plan — Serie 5a (Frontier)' }
 ];
 
+const RENDERS = [
+  { src: 'assets/render_01_metro_bogota.jpg',
+    esTitle: 'Primera Línea del Metro de Bogotá',
+    esDesc: 'Viaducto elevado sobre la Av. Caracas con estaciones cercanas en el tramo Calles 32–34 y la Estación Central en Calle 26 (conexión Metro + TransMilenio + RegioTram).',
+    enTitle: 'First Line of the Bogotá Metro',
+    enDesc: 'Elevated rail along Avenida Caracas with nearby stations around 32nd–34th St and Estación Central at 26th St (linking Metro, TransMilenio & RegioTram).' },
+  { src: 'assets/render_02_centro_internacional.jpg',
+    esTitle: 'Renovación del Centro Internacional y San Martín',
+    esDesc: 'Consolidación del eje financiero, residencial y gastronómico frente a los Cerros Orientales, con plazas peatonales, ciclorrutas y oferta comercial activa.',
+    enTitle: 'Centro Internacional & San Martín Revitalization',
+    enDesc: 'Ongoing renewal of Bogotá’s financial, residential and dining hub facing the Cerros Orientales, with walkable plazas, bike paths and urban cafés.' },
+  { src: 'assets/render_03_corredor_verde_septima.jpg',
+    esTitle: 'Eje Cultural y Peatonal · Carrera Séptima',
+    esDesc: 'A una cuadra de Frontier: conexión caminable con el Museo Nacional, el Parque Nacional, La Macarena y los principales campus universitarios del centro.',
+    enTitle: 'Walkable Cultural Corridor · Carrera Séptima',
+    enDesc: 'One block from Frontier: tree-lined pedestrian access linking Museo Nacional, Parque Nacional, La Macarena and major university campuses.' }
+];
+
 const COPY = {
   es: {
     badge1: 'Venta directa · Sin comisión de corredor',
@@ -715,6 +826,16 @@ const COPY = {
       'Junto al <strong>Centro Comercial San Martín</strong> y a 1 cuadra de la Carrera Séptima.',
       'A pasos del <strong>Centro Internacional</strong>, Museo Nacional, Parque Nacional y restaurantes de <strong>La Macarena</strong>.',
       'Alta demanda por cercanía a <strong>U. Javeriana, CESA, U. de los Andes, Tadeo y Distrital</strong>.'
+    ],
+    futEye: 'Entorno en transformación · Conectividad 2027–2028',
+    futTitle: 'El futuro del Centro Internacional y el Metro de Bogotá',
+    futLead: 'Frontier está ubicado en el corredor de mayor transformación de movilidad y renovación urbana de Bogotá, a pocos minutos caminando del eje Av. Caracas (Calles 32–34) y de la futura Estación Central de la Calle 26.',
+    futTag: 'Render conceptual',
+    futNotice: '<strong>Nota ilustrativa:</strong> Las imágenes de esta sección son visualizaciones arquitectónicas conceptuales del entorno futuro (no corresponden a fotos actuales ni comprometen obras a cargo del vendedor). Los hitos del Metro corresponden al avance oficial público reportado al segundo semestre de 2026.',
+    futStats: [
+      { v: '>84% avance', l: 'Ejecución oficial de la Primera Línea del Metro (2.º sem. 2026) con el megapuente de la Calle 26 concluido.' },
+      { v: 'Sep. 2027 / Mar. 2028', l: 'Marcha blanca (pruebas) prevista para septiembre de 2027 y operación comercial proyectada para marzo de 2028.' },
+      { v: 'Nodo multimodal', l: 'Cercanía caminable a la Av. Caracas (Cll. 32–34) y la Estación Central Cll. 26 (Metro + TransMilenio + RegioTram).' }
     ],
     safeEye: 'Trato directo · 0% comisión',
     safeTitle: 'Compra directa y segura (en Colombia o desde el exterior)',
@@ -777,6 +898,16 @@ const COPY = {
       'Walking distance to <strong>Centro Internacional</strong>, Museo Nacional, Parque Nacional &amp; <strong>La Macarena</strong> restaurants.',
       'Close to Javeriana, CESA, Los Andes, Tadeo &amp; Distrital universities.'
     ],
+    futEye: 'Urban Transformation · 2027–2028 Connectivity',
+    futTitle: 'The Future of Centro Internacional & the Bogotá Metro',
+    futLead: 'Frontier sits at the heart of Bogotá’s most significant transit and urban renewal corridor—within walking distance of Avenida Caracas (32nd–34th St) and the upcoming Estación Central transit hub at Calle 26.',
+    futTag: 'Conceptual render',
+    futNotice: '<strong>Illustrative note:</strong> Images in this section are conceptual architectural visualizations of the surrounding district’s future vision (not current site photos and not works managed by the seller). Metro progress figures reflect publicly reported milestones as of H2 2026.',
+    futStats: [
+      { v: '>84% built', l: 'Overall progress of Bogotá’s First Metro Line (H2 2026), with the Calle 26 rail bridge already structurally completed.' },
+      { v: 'Sep 2027 / Mar 2028', l: 'Official testing phase scheduled for September 2027 and full commercial passenger launch targeted for March 2028.' },
+      { v: 'Multimodal Hub', l: 'Walkable access to Avenida Caracas (32nd–34th St) and Estación Central at 26th St (Metro + TransMilenio + RegioTram).' }
+    ],
     safeEye: 'Direct Owner Sale · Zero Commission',
     safeTitle: 'Safe Direct Purchase for Foreign & Overseas Buyers',
     safeLead: 'Skip the 3% agency markup without sacrificing legal peace of mind. Your independent bilingual real estate attorney is welcome at every step.',
@@ -804,6 +935,7 @@ const COPY = {
 
 let currentLang = 'es';
 let lbIndex = 0;
+let lbItems = [];
 
 function renderGallery() {
   const c = COPY[currentLang];
@@ -812,10 +944,32 @@ function renderGallery() {
     const tagTxt = item.type === 'ref' ? c.tagRef : (item.type === 'plan' ? c.tagPlan : c.tagEmpty);
     const tagCls = item.type === 'empty' ? 'g-tag empty' : 'g-tag';
     const itemCls = item.type === 'plan' ? 'g-item plan' : 'g-item';
-    return `<div class="${itemCls}" onclick="openLb(${idx})">
+    return `<div class="${itemCls}" onclick="openLb('gallery', ${idx})">
       <span class="${tagCls}">${tagTxt}</span>
       <img src="${item.src}" alt="${item[currentLang]}" loading="lazy">
       <div class="g-cap">${item[currentLang]}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderFuture() {
+  const c = COPY[currentLang];
+  document.getElementById('future-stats').innerHTML = c.futStats.map(s => `
+    <div class="f-stat">
+      <div class="fv">${s.v}</div>
+      <div class="fl">${s.l}</div>
+    </div>`).join('');
+
+  document.getElementById('render-grid').innerHTML = RENDERS.map((r, idx) => {
+    const title = currentLang === 'es' ? r.esTitle : r.enTitle;
+    const desc = currentLang === 'es' ? r.esDesc : r.enDesc;
+    return `<div class="r-card" onclick="openLb('renders', ${idx})">
+      <span class="r-tag">${c.futTag}</span>
+      <img src="${r.src}" alt="${title}" loading="lazy">
+      <div class="r-body">
+        <h4>${title}</h4>
+        <p>${desc}</p>
+      </div>
     </div>`;
   }).join('');
 }
@@ -849,10 +1003,19 @@ function setLang(lang) {
   document.querySelectorAll('.wa-link').forEach(a => a.href = waUrl);
 
   renderGallery();
+  renderFuture();
   try { localStorage.setItem('frontier_lang', lang); } catch(e) {}
 }
 
-function openLb(idx) {
+function openLb(source, idx) {
+  if (source === 'renders') {
+    lbItems = RENDERS.map(r => ({
+      src: r.src,
+      cap: (currentLang === 'es' ? `${r.esTitle} — ${r.esDesc}` : `${r.enTitle} — ${r.enDesc}`)
+    }));
+  } else {
+    lbItems = GALLERY.map(g => ({ src: g.src, cap: g[currentLang] }));
+  }
   lbIndex = idx;
   updateLb();
   document.getElementById('lightbox').classList.add('open');
@@ -861,13 +1024,14 @@ function closeLb() {
   document.getElementById('lightbox').classList.remove('open');
 }
 function moveLb(dir) {
-  lbIndex = (lbIndex + dir + GALLERY.length) % GALLERY.length;
+  if (!lbItems.length) return;
+  lbIndex = (lbIndex + dir + lbItems.length) % lbItems.length;
   updateLb();
 }
 function updateLb() {
-  const item = GALLERY[lbIndex];
+  const item = lbItems[lbIndex];
   document.getElementById('lb-img').src = item.src;
-  document.getElementById('lb-cap').textContent = `${lbIndex + 1} / ${GALLERY.length} — ${item[currentLang]}`;
+  document.getElementById('lb-cap').textContent = `${lbIndex + 1} / ${lbItems.length} — ${item.cap}`;
 }
 document.addEventListener('keydown', e => {
   if (!document.getElementById('lightbox').classList.contains('open')) return;
