@@ -377,6 +377,71 @@
     border-radius: 8px;
   }
 
+  /* Building Common Areas Section */
+  .zones-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .z-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 0.16s ease;
+    position: relative;
+  }
+  .z-card:hover { transform: translateY(-2px); }
+  .z-card img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+  }
+  .z-body {
+    padding: 13px 16px 15px;
+  }
+  .z-body h4 {
+    margin: 0 0 4px;
+    font-size: 1.02rem;
+    color: var(--brand);
+  }
+  .z-body p {
+    margin: 0;
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .official-bar {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    box-shadow: var(--shadow);
+  }
+  .official-bar .ob-text h4 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    color: var(--brand);
+  }
+  .official-bar .ob-text p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+  .btn-brand {
+    background: var(--brand);
+    color: #fff;
+  }
+
   /* Urban Future & Metro Section */
   .future-stats {
     display: grid;
@@ -586,7 +651,7 @@
   /* Responsive */
   @media (max-width: 860px) {
     .kpi-grid, .steps { grid-template-columns: repeat(2, 1fr); }
-    .gallery, .grid-2, .future-stats, .render-grid { grid-template-columns: 1fr; }
+    .gallery, .grid-2, .zones-grid, .future-stats, .render-grid { grid-template-columns: 1fr; }
     .hero { min-height: 480px; }
   }
 </style>
@@ -673,6 +738,27 @@
         <div class="chips" id="amenities-chips"></div>
         <ul class="list" id="loc-list"></ul>
       </div>
+    </div>
+  </section>
+
+  <!-- BUILDING COMMON AREAS -->
+  <section class="block" id="zonas-comunes">
+    <div class="eyebrow" data-i18n="zonEye">Estilo de vida Frontier · Londoño Gómez &amp; Arquitectura y Concreto</div>
+    <h2 class="sec-title" data-i18n="zonTitle">Zonas comunes del Edificio Frontier</h2>
+    <p class="sec-lead" data-i18n="zonLead">Además del apartamento, disfrutas de un edificio contemporáneo diseñado para trabajar, entrenar y recibir visitas en el corazón del Centro Internacional: lobby de diseño, gimnasio, terraza con zona BBQ, club room / salón social, teatrino y lavandería comunal.</p>
+
+    <div class="zones-grid" id="zones-grid"></div>
+
+    <div class="official-bar">
+      <div class="ob-text">
+        <h4 data-i18n="offTitle">Página oficial del proyecto Edificio Frontier</h4>
+        <p data-i18n="offDesc">Consulta la ficha oficial del edificio y su respaldo constructivo en el portal de Arquitectura y Concreto.</p>
+      </div>
+      <a class="btn btn-brand" href="https://www.arquitecturayconcreto.com/proyectos/bogota/frontier" target="_blank" rel="noopener noreferrer" data-i18n="offBtn">Ver página oficial de Frontier ↗</a>
+    </div>
+
+    <div class="notice" data-i18n="zonNotice">
+      <strong>Nota:</strong> Las imágenes de zonas comunes provienen del brochure comercial oficial del proyecto Frontier y se presentan como referencia ilustrativa de las áreas sociales del edificio.
     </div>
   </section>
 
@@ -770,6 +856,29 @@ const GALLERY = [
     en: 'Reference architectural floor plan — Serie 5a (Frontier)' }
 ];
 
+const ZONES = [
+  { src: 'assets/zona_01_fachada_frontier.jpg',
+    esTitle: 'Fachada y acceso principal · Calle 33 # 6-37',
+    esDesc: 'Arquitectura contemporánea en ladrillo a la vista y vidrio, con acceso peatonal elegante a una cuadra de la Carrera 7.ª y junto al C.C. San Martín.',
+    enTitle: 'Facade & Main Entrance · Calle 33 # 6-37',
+    enDesc: 'Contemporary brick-and-glass architecture with an inviting street entrance one block off Carrera 7 and next to San Martín Mall.' },
+  { src: 'assets/zona_02_lobby_frontier.jpg',
+    esTitle: 'Lobby principal y recepción',
+    esDesc: 'Recepción moderna con sala de espera de diseño, ventanales piso a techo y control de acceso.',
+    enTitle: 'Main Lobby & Reception',
+    enDesc: 'Modern concierge lobby with designer lounge seating, floor-to-ceiling windows and controlled access.' },
+  { src: 'assets/zona_03_terraza_bbq_frontier.jpg',
+    esTitle: 'Terraza BBQ con pérgola y vista a los Cerros',
+    esDesc: 'Espacio exterior en terraza para reuniones, asados y momentos al aire libre con vista directa a los Cerros Orientales.',
+    enTitle: 'Rooftop BBQ Terrace & Mountain Views',
+    enDesc: 'Open-air rooftop terrace with pergola and BBQ area overlooking Bogotá’s iconic Cerros Orientales.' },
+  { src: 'assets/zona_04_club_room_frontier.jpg',
+    esTitle: 'Club Room / Salón social + Gimnasio, Teatrino y Lavandería',
+    esDesc: 'Salón social con chimenea y mesa coworking/reuniones con panorámica al Centro Internacional, complementado por gimnasio, teatrino y lavandería comunal.',
+    enTitle: 'Club Room / Social Lounge + Gym, Screening Room & Laundry',
+    enDesc: 'Social lounge with fireplace, coworking/meeting table and Centro Internacional skyline views, plus building gym, screening room and communal laundry.' }
+];
+
 const RENDERS = [
   { src: 'assets/render_01_metro_bogota.jpg',
     esTitle: 'Primera Línea del Metro de Bogotá',
@@ -827,6 +936,14 @@ const COPY = {
       'A pasos del <strong>Centro Internacional</strong>, Museo Nacional, Parque Nacional y restaurantes de <strong>La Macarena</strong>.',
       'Alta demanda por cercanía a <strong>U. Javeriana, CESA, U. de los Andes, Tadeo y Distrital</strong>.'
     ],
+    zonEye: 'Estilo de vida Frontier · Londoño Gómez & Arquitectura y Concreto',
+    zonTitle: 'Zonas comunes del Edificio Frontier',
+    zonLead: 'Además del apartamento, disfrutas de un edificio contemporáneo diseñado para trabajar, entrenar y recibir visitas en el corazón del Centro Internacional: lobby de diseño, gimnasio, terraza con zona BBQ, club room / salón social, teatrino y lavandería comunal.',
+    zonTag: 'Brochure oficial Frontier',
+    offTitle: 'Página oficial del proyecto Edificio Frontier',
+    offDesc: 'Consulta la ficha oficial del edificio y su respaldo constructivo en el portal de Arquitectura y Concreto.',
+    offBtn: 'Ver página oficial de Frontier ↗',
+    zonNotice: '<strong>Nota:</strong> Las imágenes de zonas comunes provienen del brochure comercial oficial del proyecto Frontier y se presentan como referencia ilustrativa de las áreas sociales del edificio.',
     futEye: 'Entorno en transformación · Conectividad 2027–2028',
     futTitle: 'El futuro del Centro Internacional y el Metro de Bogotá',
     futLead: 'Frontier está ubicado en el corredor de mayor transformación de movilidad y renovación urbana de Bogotá, a pocos minutos caminando del eje Av. Caracas (Calles 32–34) y de la futura Estación Central de la Calle 26.',
@@ -898,6 +1015,14 @@ const COPY = {
       'Walking distance to <strong>Centro Internacional</strong>, Museo Nacional, Parque Nacional &amp; <strong>La Macarena</strong> restaurants.',
       'Close to Javeriana, CESA, Los Andes, Tadeo &amp; Distrital universities.'
     ],
+    zonEye: 'Frontier Lifestyle · Londoño Gómez & Arquitectura y Concreto',
+    zonTitle: 'Frontier Building Common Areas & Amenities',
+    zonLead: 'Beyond the studio itself, enjoy a contemporary building designed for remote work, fitness and hosting in the heart of Centro Internacional: designer lobby, gym, rooftop BBQ terrace, social club room, screening room and communal laundry.',
+    zonTag: 'Official Frontier brochure',
+    offTitle: 'Official Frontier Building Project Page',
+    offDesc: 'Explore the official developer page and architectural profile of Frontier on Arquitectura y Concreto’s website.',
+    offBtn: 'Visit Official Frontier Page ↗',
+    zonNotice: '<strong>Note:</strong> Common-area visuals are taken from the official Frontier developer brochure and shown as an illustrative reference of the building’s social spaces.',
     futEye: 'Urban Transformation · 2027–2028 Connectivity',
     futTitle: 'The Future of Centro Internacional & the Bogotá Metro',
     futLead: 'Frontier sits at the heart of Bogotá’s most significant transit and urban renewal corridor—within walking distance of Avenida Caracas (32nd–34th St) and the upcoming Estación Central transit hub at Calle 26.',
@@ -948,6 +1073,22 @@ function renderGallery() {
       <span class="${tagCls}">${tagTxt}</span>
       <img src="${item.src}" alt="${item[currentLang]}" loading="lazy">
       <div class="g-cap">${item[currentLang]}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderZones() {
+  const c = COPY[currentLang];
+  document.getElementById('zones-grid').innerHTML = ZONES.map((z, idx) => {
+    const title = currentLang === 'es' ? z.esTitle : z.enTitle;
+    const desc = currentLang === 'es' ? z.esDesc : z.enDesc;
+    return `<div class="z-card" onclick="openLb('zones', ${idx})">
+      <span class="r-tag">${c.zonTag}</span>
+      <img src="${z.src}" alt="${title}" loading="lazy">
+      <div class="z-body">
+        <h4>${title}</h4>
+        <p>${desc}</p>
+      </div>
     </div>`;
   }).join('');
 }
@@ -1003,6 +1144,7 @@ function setLang(lang) {
   document.querySelectorAll('.wa-link').forEach(a => a.href = waUrl);
 
   renderGallery();
+  renderZones();
   renderFuture();
   try { localStorage.setItem('frontier_lang', lang); } catch(e) {}
 }
@@ -1012,6 +1154,11 @@ function openLb(source, idx) {
     lbItems = RENDERS.map(r => ({
       src: r.src,
       cap: (currentLang === 'es' ? `${r.esTitle} — ${r.esDesc}` : `${r.enTitle} — ${r.enDesc}`)
+    }));
+  } else if (source === 'zones') {
+    lbItems = ZONES.map(z => ({
+      src: z.src,
+      cap: (currentLang === 'es' ? `${z.esTitle} — ${z.esDesc}` : `${z.enTitle} — ${z.enDesc}`)
     }));
   } else {
     lbItems = GALLERY.map(g => ({ src: g.src, cap: g[currentLang] }));
