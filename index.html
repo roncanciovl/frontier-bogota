@@ -470,8 +470,21 @@
   }
   .render-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    margin-bottom: 16px;
+  }
+  .src-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .btn-outline-dark {
+    background: #eef4f2;
+    color: var(--brand);
+    border: 1px solid #c7d9d5;
+    padding: 10px 16px;
+    font-size: 0.88rem;
   }
   .r-card {
     background: var(--card);
@@ -771,8 +784,19 @@
     <div class="future-stats" id="future-stats"></div>
     <div class="render-grid" id="render-grid"></div>
 
+    <div class="official-bar">
+      <div class="ob-text">
+        <h4 data-i18n="srcTitle">Fuentes oficiales de proyectos urbanos y movilidad</h4>
+        <p data-i18n="srcDesc">Verifica los diseños oficiales del Plan Parcial Estación Metro Calle 26 y los avances de obra directamente en los portales del Distrito.</p>
+      </div>
+      <div class="src-links">
+        <a class="btn btn-brand" href="https://renobo.com.co/es/proyectos/estacion-metro-calle-26" target="_blank" rel="noopener noreferrer" data-i18n="srcBtn1">RenoBo · Estación Metro 26 ↗</a>
+        <a class="btn btn-outline-dark" href="https://bogota.gov.co/mi-ciudad/movilidad/metro-de-bogota" target="_blank" rel="noopener noreferrer" data-i18n="srcBtn2">Bogota.gov.co · Metro de Bogotá ↗</a>
+      </div>
+    </div>
+
     <div class="notice" data-i18n="futNotice">
-      <strong>Nota ilustrativa:</strong> Las imágenes de esta sección son visualizaciones arquitectónicas conceptuales del entorno futuro (no corresponden a fotos actuales ni comprometen obras a cargo del vendedor). Los hitos del Metro corresponden al avance oficial público reportado al segundo semestre de 2026.
+      <strong>Nota de fuentes oficiales:</strong> Las visualizaciones y fotografías de esta sección provienen directamente de los portales institucionales de la Alcaldía Mayor de Bogotá (<strong>RenoBo</strong> y <strong>Bogota.gov.co</strong>) y se presentan como referencia informativa del entorno urbano (no constituyen obras a cargo del vendedor ni promesa de valorización).
     </div>
   </section>
 
@@ -880,21 +904,34 @@ const ZONES = [
 ];
 
 const RENDERS = [
-  { src: 'assets/render_01_metro_bogota.jpg',
-    esTitle: 'Primera Línea del Metro de Bogotá',
-    esDesc: 'Viaducto elevado sobre la Av. Caracas con estaciones cercanas en el tramo Calles 32–34 y la Estación Central en Calle 26 (conexión Metro + TransMilenio + RegioTram).',
-    enTitle: 'First Line of the Bogotá Metro',
-    enDesc: 'Elevated rail along Avenida Caracas with nearby stations around 32nd–34th St and Estación Central at 26th St (linking Metro, TransMilenio & RegioTram).' },
-  { src: 'assets/render_02_centro_internacional.jpg',
-    esTitle: 'Renovación del Centro Internacional y San Martín',
-    esDesc: 'Consolidación del eje financiero, residencial y gastronómico frente a los Cerros Orientales, con plazas peatonales, ciclorrutas y oferta comercial activa.',
-    enTitle: 'Centro Internacional & San Martín Revitalization',
-    enDesc: 'Ongoing renewal of Bogotá’s financial, residential and dining hub facing the Cerros Orientales, with walkable plazas, bike paths and urban cafés.' },
-  { src: 'assets/render_03_corredor_verde_septima.jpg',
-    esTitle: 'Eje Cultural y Peatonal · Carrera Séptima',
-    esDesc: 'A una cuadra de Frontier: conexión caminable con el Museo Nacional, el Parque Nacional, La Macarena y los principales campus universitarios del centro.',
-    enTitle: 'Walkable Cultural Corridor · Carrera Séptima',
-    enDesc: 'One block from Frontier: tree-lined pedestrian access linking Museo Nacional, Parque Nacional, La Macarena and major university campuses.' }
+  { src: 'assets/oficial_01_renobo_centro_internacional.jpg',
+    esTag: 'Render oficial · RenoBo',
+    enTag: 'Official render · RenoBo',
+    esTitle: 'Plan Parcial Estación Metro Calle 26 y Centro Internacional',
+    esDesc: 'Panorámica oficial del proyecto de renovación urbana (9,3 hectáreas) integrando el viaducto del Metro con el skyline del Centro Internacional, Torre Atrio y los Cerros Orientales.',
+    enTitle: 'Estación Metro Calle 26 & Centro Internacional Renewal Plan',
+    enDesc: 'Official district panorama of the 9.3-hectare urban renewal plan integrating the Metro viaduct with Centro Internacional towers, Torre Atrio and the Cerros Orientales.' },
+  { src: 'assets/oficial_02_renobo_estacion_metro_26.jpg',
+    esTag: 'Render oficial · RenoBo',
+    enTag: 'Official render · RenoBo',
+    esTitle: 'Acceso Estación Metro de Bogotá (Calle 26)',
+    esDesc: 'Diseño oficial de la Estación 13 y su integración con jardines verticales, pasarelas peatonales y espacio público renovado a minutos a pie de Frontier.',
+    enTitle: 'Bogotá Metro Station Access (Calle 26)',
+    enDesc: 'Official architectural render of Station 13 integrating vertical gardens, pedestrian walkways and renewed public plazas within walking distance of Frontier.' },
+  { src: 'assets/oficial_03_renobo_regiotram_calle26.jpg',
+    esTag: 'Render oficial · RenoBo',
+    enTag: 'Official render · RenoBo',
+    esTitle: 'Conexión multimodal: RegioTram de Occidente + Metro + TransMilenio',
+    esDesc: 'Render oficial del nodo intermodal de la Calle 26 que conectará la Línea 1 del Metro, TransMilenio y el RegioTram de Occidente hacia la Sabana.',
+    enTitle: 'Multimodal Hub: RegioTram de Occidente + Metro + TransMilenio',
+    enDesc: 'Official render of the Calle 26 intermodal hub connecting Bogotá Metro Line 1, TransMilenio and the RegioTram commuter rail.' },
+  { src: 'assets/oficial_04_bogota_metro_viaducto_2026.jpg',
+    esTag: 'Foto oficial obra · Bogota.gov.co (Nov. 2026)',
+    enTag: 'Official construction photo · Bogota.gov.co (Nov 2026)',
+    esTitle: 'Avance real de obra: 20 km de viaducto elevado construidos',
+    esDesc: 'Fotografía oficial publicada por la Alcaldía Mayor de Bogotá (nov. 2026) que documenta el avance superior al 84% de la Primera Línea del Metro con rieles ya instalados.',
+    enTitle: 'Real Construction Progress: 20 km of Elevated Viaduct Built',
+    enDesc: 'Official photograph published by the Mayor’s Office of Bogotá (Nov 2026) documenting 84%+ overall progress on Metro Line 1 with rail tracks already laid.' }
 ];
 
 const COPY = {
@@ -947,8 +984,12 @@ const COPY = {
     futEye: 'Entorno en transformación · Conectividad 2027–2028',
     futTitle: 'El futuro del Centro Internacional y el Metro de Bogotá',
     futLead: 'Frontier está ubicado en el corredor de mayor transformación de movilidad y renovación urbana de Bogotá, a pocos minutos caminando del eje Av. Caracas (Calles 32–34) y de la futura Estación Central de la Calle 26.',
-    futTag: 'Render conceptual',
-    futNotice: '<strong>Nota ilustrativa:</strong> Las imágenes de esta sección son visualizaciones arquitectónicas conceptuales del entorno futuro (no corresponden a fotos actuales ni comprometen obras a cargo del vendedor). Los hitos del Metro corresponden al avance oficial público reportado al segundo semestre de 2026.',
+    futTag: 'Fuente oficial',
+    srcTitle: 'Fuentes oficiales de proyectos urbanos y movilidad',
+    srcDesc: 'Verifica los diseños oficiales del Plan Parcial Estación Metro Calle 26 y los avances de obra directamente en los portales del Distrito.',
+    srcBtn1: 'RenoBo · Estación Metro 26 ↗',
+    srcBtn2: 'Bogota.gov.co · Metro de Bogotá ↗',
+    futNotice: '<strong>Nota de fuentes oficiales:</strong> Las visualizaciones y fotografías de esta sección provienen directamente de los portales institucionales de la Alcaldía Mayor de Bogotá (<strong>RenoBo</strong> y <strong>Bogota.gov.co</strong>) y se presentan como referencia informativa del entorno urbano (no constituyen obras a cargo del vendedor ni promesa de valorización).',
     futStats: [
       { v: '>84% avance', l: 'Ejecución oficial de la Primera Línea del Metro (2.º sem. 2026) con el megapuente de la Calle 26 concluido.' },
       { v: 'Sep. 2027 / Mar. 2028', l: 'Marcha blanca (pruebas) prevista para septiembre de 2027 y operación comercial proyectada para marzo de 2028.' },
@@ -1026,8 +1067,12 @@ const COPY = {
     futEye: 'Urban Transformation · 2027–2028 Connectivity',
     futTitle: 'The Future of Centro Internacional & the Bogotá Metro',
     futLead: 'Frontier sits at the heart of Bogotá’s most significant transit and urban renewal corridor—within walking distance of Avenida Caracas (32nd–34th St) and the upcoming Estación Central transit hub at Calle 26.',
-    futTag: 'Conceptual render',
-    futNotice: '<strong>Illustrative note:</strong> Images in this section are conceptual architectural visualizations of the surrounding district’s future vision (not current site photos and not works managed by the seller). Metro progress figures reflect publicly reported milestones as of H2 2026.',
+    futTag: 'Official source',
+    srcTitle: 'Official Bogotá District & Transit Sources',
+    srcDesc: 'Verify the official designs of the Estación Metro Calle 26 Urban Renewal Plan and live Metro construction updates directly on Bogotá’s official portals.',
+    srcBtn1: 'RenoBo · Estación Metro 26 ↗',
+    srcBtn2: 'Bogota.gov.co · Bogotá Metro ↗',
+    futNotice: '<strong>Official sources note:</strong> All renders and photographs in this section come directly from official Bogotá municipal portals (<strong>RenoBo</strong> and <strong>Bogota.gov.co</strong>) and are shown for urban-context reference only (not works managed by the seller and not a guarantee of appreciation).',
     futStats: [
       { v: '>84% built', l: 'Overall progress of Bogotá’s First Metro Line (H2 2026), with the Calle 26 rail bridge already structurally completed.' },
       { v: 'Sep 2027 / Mar 2028', l: 'Official testing phase scheduled for September 2027 and full commercial passenger launch targeted for March 2028.' },
@@ -1104,8 +1149,9 @@ function renderFuture() {
   document.getElementById('render-grid').innerHTML = RENDERS.map((r, idx) => {
     const title = currentLang === 'es' ? r.esTitle : r.enTitle;
     const desc = currentLang === 'es' ? r.esDesc : r.enDesc;
+    const tag = currentLang === 'es' ? r.esTag : r.enTag;
     return `<div class="r-card" onclick="openLb('renders', ${idx})">
-      <span class="r-tag">${c.futTag}</span>
+      <span class="r-tag">${tag}</span>
       <img src="${r.src}" alt="${title}" loading="lazy">
       <div class="r-body">
         <h4>${title}</h4>
