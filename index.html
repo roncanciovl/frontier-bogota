@@ -881,22 +881,30 @@ const GALLERY = [
 ];
 
 const ZONES = [
+  { src: 'assets/zona_02_lobby_frontier.jpg',
+    esTag: 'Foto real · Arquitectura y Concreto',
+    enTag: 'Real photo · Arquitectura y Concreto',
+    esTitle: 'Lobby principal y lounge social (foto real)',
+    esDesc: 'Fotografía real del lobby y sala social de Frontier publicada en el portal oficial de Arquitectura y Concreto: techo en listones de madera, iluminación lineal, zona lounge y mesa de coworking.',
+    enTitle: 'Main Lobby & Social Lounge (Real Photo)',
+    enDesc: 'Real photograph of Frontier’s lobby and lounge from Arquitectura y Concreto’s official page: slatted wood ceiling, linear architectural lighting, lounge seating and coworking table.' },
   { src: 'assets/zona_01_fachada_frontier.jpg',
+    esTag: 'Brochure oficial Frontier',
+    enTag: 'Official Frontier brochure',
     esTitle: 'Fachada y acceso principal · Calle 33 # 6-37',
     esDesc: 'Arquitectura contemporánea en ladrillo a la vista y vidrio, con acceso peatonal elegante a una cuadra de la Carrera 7.ª y junto al C.C. San Martín.',
     enTitle: 'Facade & Main Entrance · Calle 33 # 6-37',
     enDesc: 'Contemporary brick-and-glass architecture with an inviting street entrance one block off Carrera 7 and next to San Martín Mall.' },
-  { src: 'assets/zona_02_lobby_frontier.jpg',
-    esTitle: 'Lobby principal y recepción',
-    esDesc: 'Recepción moderna con sala de espera de diseño, ventanales piso a techo y control de acceso.',
-    enTitle: 'Main Lobby & Reception',
-    enDesc: 'Modern concierge lobby with designer lounge seating, floor-to-ceiling windows and controlled access.' },
   { src: 'assets/zona_03_terraza_bbq_frontier.jpg',
+    esTag: 'Brochure oficial Frontier',
+    enTag: 'Official Frontier brochure',
     esTitle: 'Terraza BBQ con pérgola y vista a los Cerros',
     esDesc: 'Espacio exterior en terraza para reuniones, asados y momentos al aire libre con vista directa a los Cerros Orientales.',
     enTitle: 'Rooftop BBQ Terrace & Mountain Views',
     enDesc: 'Open-air rooftop terrace with pergola and BBQ area overlooking Bogotá’s iconic Cerros Orientales.' },
   { src: 'assets/zona_04_club_room_frontier.jpg',
+    esTag: 'Brochure oficial Frontier',
+    enTag: 'Official Frontier brochure',
     esTitle: 'Club Room / Salón social + Gimnasio, Teatrino y Lavandería',
     esDesc: 'Salón social con chimenea y mesa coworking/reuniones con panorámica al Centro Internacional, complementado por gimnasio, teatrino y lavandería comunal.',
     enTitle: 'Club Room / Social Lounge + Gym, Screening Room & Laundry',
@@ -1123,12 +1131,12 @@ function renderGallery() {
 }
 
 function renderZones() {
-  const c = COPY[currentLang];
   document.getElementById('zones-grid').innerHTML = ZONES.map((z, idx) => {
     const title = currentLang === 'es' ? z.esTitle : z.enTitle;
     const desc = currentLang === 'es' ? z.esDesc : z.enDesc;
+    const tag = currentLang === 'es' ? z.esTag : z.enTag;
     return `<div class="z-card" onclick="openLb('zones', ${idx})">
-      <span class="r-tag">${c.zonTag}</span>
+      <span class="r-tag">${tag}</span>
       <img src="${z.src}" alt="${title}" loading="lazy">
       <div class="z-body">
         <h4>${title}</h4>
