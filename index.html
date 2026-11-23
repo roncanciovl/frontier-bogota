@@ -378,10 +378,55 @@
   }
 
   /* Building Common Areas Section */
+  .zones-feature {
+    display: grid;
+    grid-template-columns: 1.55fr 0.85fr;
+    gap: 16px;
+    margin-bottom: 16px;
+    align-items: stretch;
+  }
+  .z-hero-card, .z-video-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .z-hero-card { cursor: pointer; transition: transform 0.16s ease; }
+  .z-hero-card:hover { transform: translateY(-2px); }
+  .z-hero-card img {
+    width: 100%;
+    flex: 1;
+    min-height: 290px;
+    max-height: 390px;
+    object-fit: cover;
+    display: block;
+  }
+  .z-video-wrap {
+    background: #0d1d22;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 290px;
+    max-height: 390px;
+    overflow: hidden;
+  }
+  .z-video-wrap video {
+    height: 100%;
+    max-height: 390px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    background: #0d1d22;
+  }
   .zones-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
     margin-bottom: 18px;
   }
   .z-card {
@@ -393,27 +438,32 @@
     cursor: pointer;
     transition: transform 0.16s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
   }
   .z-card:hover { transform: translateY(-2px); }
   .z-card img {
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
     display: block;
+    background: #102a31;
   }
   .z-body {
-    padding: 13px 16px 15px;
+    padding: 12px 14px 14px;
+    flex: 1;
   }
   .z-body h4 {
     margin: 0 0 4px;
-    font-size: 1.02rem;
+    font-size: 0.96rem;
     color: var(--brand);
+    line-height: 1.25;
   }
   .z-body p {
     margin: 0;
-    font-size: 0.87rem;
+    font-size: 0.84rem;
     color: var(--muted);
-    line-height: 1.45;
+    line-height: 1.42;
   }
   .official-bar {
     background: var(--card);
@@ -855,8 +905,8 @@
 
   /* Responsive */
   @media (max-width: 860px) {
-    .kpi-grid, .steps, .inv-kpi-grid { grid-template-columns: repeat(2, 1fr); }
-    .gallery, .grid-2, .zones-grid, .future-stats, .render-grid, .walk-grid, .calc-grid { grid-template-columns: 1fr; }
+    .kpi-grid, .steps, .inv-kpi-grid, .zones-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery, .grid-2, .zones-feature, .future-stats, .render-grid, .walk-grid, .calc-grid { grid-template-columns: 1fr; }
     .hero { min-height: 480px; }
   }
 </style>
@@ -951,6 +1001,22 @@
     <div class="eyebrow" data-i18n="zonEye">Estilo de vida Frontier · Londoño Gómez &amp; Arquitectura y Concreto</div>
     <h2 class="sec-title" data-i18n="zonTitle">Zonas comunes del Edificio Frontier</h2>
     <p class="sec-lead" data-i18n="zonLead">Además del apartamento, disfrutas de un edificio contemporáneo diseñado para trabajar, entrenar y recibir visitas en el corazón del Centro Internacional: lobby de diseño, gimnasio, terraza con zona BBQ, club room / salón social, teatrino y lavandería comunal.</p>
+
+    <div class="zones-feature">
+      <div class="z-hero-card" id="zone-hero-card" onclick="openLb('zones', 0)"></div>
+      <div class="z-video-card">
+        <span class="r-tag" data-i18n="vidTag">Video real · 34 s</span>
+        <div class="z-video-wrap">
+          <video controls playsinline muted preload="metadata" poster="assets/zona_real_01_terraza.jpg">
+            <source src="assets/zonas_comunes_frontier.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="z-body">
+          <h4 data-i18n="vidTitle">Recorrido real por zonas comunes</h4>
+          <p data-i18n="vidDesc">Terraza rooftop, vista al Centro Internacional, teatrino, gimnasio y lobby (archivo real del propietario).</p>
+        </div>
+      </div>
+    </div>
 
     <div class="zones-grid" id="zones-grid"></div>
 
@@ -1150,27 +1216,34 @@ const ZONES = [
     esDesc: 'Fotografía real del lobby y sala social de Frontier publicada en el portal oficial de Arquitectura y Concreto: techo en listones de madera, iluminación lineal, zona lounge y mesa de coworking.',
     enTitle: 'Main Lobby & Social Lounge (Real Photo)',
     enDesc: 'Real photograph of Frontier’s lobby and lounge from Arquitectura y Concreto’s official page: slatted wood ceiling, linear architectural lighting, lounge seating and coworking table.' },
-  { src: 'assets/zona_01_fachada_frontier.jpg',
-    esTag: 'Brochure oficial Frontier',
-    enTag: 'Official Frontier brochure',
-    esTitle: 'Fachada y acceso principal · Calle 33 # 6-37',
-    esDesc: 'Arquitectura contemporánea en ladrillo a la vista y vidrio, con acceso peatonal elegante a una cuadra de la Carrera 7.ª y junto al C.C. San Martín.',
-    enTitle: 'Facade & Main Entrance · Calle 33 # 6-37',
-    enDesc: 'Contemporary brick-and-glass architecture with an inviting street entrance one block off Carrera 7 and next to San Martín Mall.' },
-  { src: 'assets/zona_03_terraza_bbq_frontier.jpg',
-    esTag: 'Brochure oficial Frontier',
-    enTag: 'Official Frontier brochure',
-    esTitle: 'Terraza BBQ con pérgola y vista a los Cerros',
-    esDesc: 'Espacio exterior en terraza para reuniones, asados y momentos al aire libre con vista directa a los Cerros Orientales.',
-    enTitle: 'Rooftop BBQ Terrace & Mountain Views',
-    enDesc: 'Open-air rooftop terrace with pergola and BBQ area overlooking Bogotá’s iconic Cerros Orientales.' },
-  { src: 'assets/zona_04_club_room_frontier.jpg',
-    esTag: 'Brochure oficial Frontier',
-    enTag: 'Official Frontier brochure',
-    esTitle: 'Club Room / Salón social + Gimnasio, Teatrino y Lavandería',
-    esDesc: 'Salón social con chimenea y mesa coworking/reuniones con panorámica al Centro Internacional, complementado por gimnasio, teatrino y lavandería comunal.',
-    enTitle: 'Club Room / Social Lounge + Gym, Screening Room & Laundry',
-    enDesc: 'Social lounge with fireplace, coworking/meeting table and Centro Internacional skyline views, plus building gym, screening room and communal laundry.' }
+  { src: 'assets/zona_real_01_terraza.jpg',
+    esTag: 'Foto real · Archivo propietario',
+    enTag: 'Real photo · Owner archive',
+    esTitle: 'Terraza rooftop y zona lounge',
+    esDesc: 'Deck en madera, poltronas y mesas exteriores en el último piso junto al parque infantil.',
+    enTitle: 'Rooftop Deck & Lounge Terrace',
+    enDesc: 'Wooden rooftop deck with outdoor lounge seating and children’s play area.' },
+  { src: 'assets/zona_real_02_vista.jpg',
+    esTag: 'Foto real · Archivo propietario',
+    enTag: 'Real photo · Owner archive',
+    esTitle: 'Vista panorámica desde terraza',
+    esDesc: 'Panorámica abierta hacia el skyline del Centro Internacional, Torre Colpatria y los Cerros.',
+    enTitle: 'Panoramic Rooftop Views',
+    enDesc: 'Open views of Bogotá’s Centro Internacional skyline, Torre Colpatria & mountains.' },
+  { src: 'assets/zona_real_03_teatrino.jpg',
+    esTag: 'Foto real · Archivo propietario',
+    enTag: 'Real photo · Owner archive',
+    esTitle: 'Teatrino / Sala de cine privada',
+    esDesc: 'Silletería escalonada, tratamiento acústico y proyector instalado para residentes.',
+    enTitle: 'Private Screening Room (Teatrino)',
+    enDesc: 'Tiered theater seating, acoustic panels and ceiling projector for residents.' },
+  { src: 'assets/zona_real_04_gimnasio.jpg',
+    esTag: 'Foto real · Archivo propietario',
+    enTag: 'Real photo · Owner archive',
+    esTitle: 'Gimnasio semidotado',
+    esDesc: 'Bicicletas de spinning, trotadoras, máquinas multifuncionales y zona de pesas.',
+    enTitle: 'Building Gym',
+    enDesc: 'Spinning bikes, treadmills, multi-station machines and free weights area.' }
 ];
 
 const RENDERS = [
@@ -1250,7 +1323,10 @@ const COPY = {
     offTitle: 'Página oficial del proyecto Edificio Frontier',
     offDesc: 'Consulta la ficha oficial del edificio y su respaldo constructivo en el portal de Arquitectura y Concreto.',
     offBtn: 'Ver página oficial de Frontier ↗',
-    zonNotice: '<strong>Nota:</strong> Las imágenes de zonas comunes provienen del brochure comercial oficial del proyecto Frontier y se presentan como referencia ilustrativa de las áreas sociales del edificio.',
+    zonNotice: '<strong>Nota de transparencia:</strong> La fotografía del lobby proviene del portal oficial de Arquitectura y Concreto; las fotografías y el recorrido en video de terraza, panorámica, teatrino y gimnasio fueron extraídos de un video real grabado por el propietario (archivo ~2022).',
+    vidTag: 'Video real · 34 s',
+    vidTitle: 'Recorrido real por zonas comunes',
+    vidDesc: 'Terraza rooftop, vista al Centro Internacional, teatrino, gimnasio y lobby (archivo real del propietario).',
     futEye: 'Entorno en transformación · Conectividad 2027–2028',
     futTitle: 'El futuro del Centro Internacional y el Metro de Bogotá',
     futLead: 'Frontier está ubicado en el corredor de mayor transformación de movilidad y renovación urbana de Bogotá, a pocos minutos caminando del eje Av. Caracas (Calles 32–34) y de la futura Estación Central de la Calle 26.',
@@ -1378,7 +1454,10 @@ const COPY = {
     offTitle: 'Official Frontier Building Project Page',
     offDesc: 'Explore the official developer page and architectural profile of Frontier on Arquitectura y Concreto’s website.',
     offBtn: 'Visit Official Frontier Page ↗',
-    zonNotice: '<strong>Note:</strong> Common-area visuals are taken from the official Frontier developer brochure and shown as an illustrative reference of the building’s social spaces.',
+    zonNotice: '<strong>Transparency note:</strong> The lobby photograph is from Arquitectura y Concreto’s official project page; rooftop, skyline view, screening room and gym stills plus the 34-second clip are extracted from real owner-recorded video (archive ~2022).',
+    vidTag: 'Real video · 34 s',
+    vidTitle: 'Real Common Areas Walkthrough',
+    vidDesc: 'Rooftop deck, Centro Internacional skyline, screening room, gym & lobby (real owner video archive).',
     futEye: 'Urban Transformation · 2027–2028 Connectivity',
     futTitle: 'The Future of Centro Internacional & the Bogotá Metro',
     futLead: 'Frontier sits at the heart of Bogotá’s most significant transit and urban renewal corridor—within walking distance of Avenida Caracas (32nd–34th St) and the upcoming Estación Central transit hub at Calle 26.',
@@ -1483,7 +1562,20 @@ function renderGallery() {
 }
 
 function renderZones() {
-  document.getElementById('zones-grid').innerHTML = ZONES.map((z, idx) => {
+  const hero = ZONES[0];
+  const hTitle = currentLang === 'es' ? hero.esTitle : hero.enTitle;
+  const hDesc = currentLang === 'es' ? hero.esDesc : hero.enDesc;
+  const hTag = currentLang === 'es' ? hero.esTag : hero.enTag;
+  document.getElementById('zone-hero-card').innerHTML = `
+    <span class="r-tag">${hTag}</span>
+    <img src="${hero.src}" alt="${hTitle}" loading="lazy">
+    <div class="z-body">
+      <h4>${hTitle}</h4>
+      <p>${hDesc}</p>
+    </div>`;
+
+  document.getElementById('zones-grid').innerHTML = ZONES.slice(1).map((z, i) => {
+    const idx = i + 1;
     const title = currentLang === 'es' ? z.esTitle : z.enTitle;
     const desc = currentLang === 'es' ? z.esDesc : z.enDesc;
     const tag = currentLang === 'es' ? z.esTag : z.enTag;
