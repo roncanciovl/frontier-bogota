@@ -903,6 +903,94 @@
   .lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
   .lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
 
+  /* Anti-Bot Contact Modal */
+  .c-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    background: rgba(9, 20, 24, 0.78);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+  }
+  .c-modal-backdrop.open { display: flex; }
+  .c-modal {
+    background: #fff;
+    color: var(--ink);
+    border-radius: 16px;
+    max-width: 440px;
+    width: 100%;
+    padding: 24px 22px 20px;
+    box-shadow: 0 22px 50px rgba(0,0,0,0.3);
+    position: relative;
+  }
+  .c-modal-x {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    border: 0;
+    background: transparent;
+    font-size: 1.5rem;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .c-modal h3 {
+    margin: 0 0 8px;
+    font-size: 1.18rem;
+    color: var(--brand);
+  }
+  .c-modal p {
+    margin: 0 0 16px;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.48;
+  }
+  .human-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f2f7f5;
+    border: 1px solid #cce0db;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--brand);
+    user-select: none;
+  }
+  .human-check input {
+    width: 18px;
+    height: 18px;
+    accent-color: #1e874b;
+    cursor: pointer;
+  }
+  .c-modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .btn-disabled {
+    opacity: 0.45;
+    pointer-events: none;
+  }
+  .revealed-num {
+    display: none;
+    text-align: center;
+    background: #eef6f3;
+    border: 1px dashed #9fc5b8;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1.12rem;
+    font-weight: 800;
+    color: var(--brand);
+    letter-spacing: 0.5px;
+  }
+  .revealed-num.show { display: block; }
+
   /* Responsive */
   @media (max-width: 860px) {
     .kpi-grid, .steps, .inv-kpi-grid, .zones-grid { grid-template-columns: repeat(2, 1fr); }
@@ -921,7 +1009,7 @@
         <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
         <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
       </div>
-      <a class="btn-wa-sm wa-link" href="https://wa.me/573043656226" target="_blank" rel="noopener">WhatsApp</a>
+      <button type="button" class="btn-wa-sm wa-link" style="border:0;cursor:pointer;" onclick="openContactModal(event)">WhatsApp</button>
     </div>
   </div>
 </nav>
@@ -940,7 +1028,7 @@
       <span class="price-usd" data-i18n="priceUsd">≈ USD $106.900* · Negociables</span>
     </div>
     <div class="cta-row">
-      <a class="btn btn-primary wa-link" href="https://wa.me/573043656226" target="_blank" rel="noopener" data-i18n="ctaWa">Escribir por WhatsApp (Tour / Visita)</a>
+      <button type="button" class="btn btn-primary wa-link" onclick="openContactModal(event)" data-i18n="ctaWa">Escribir por WhatsApp (Tour / Visita)</button>
       <a class="btn btn-outline" id="pdf-btn" href="docs/Frontier_Ficha_ES.pdf" target="_blank" rel="noopener" data-i18n="ctaPdf">Descargar Ficha PDF</a>
     </div>
   </div>
@@ -1152,10 +1240,10 @@
     <div class="cta-banner">
       <div>
         <h2 data-i18n="ctaTitle">¿Te gustaría visitarlo o hacer un tour en vivo por video?</h2>
-        <p data-i18n="ctaDesc">Escríbeme directo por WhatsApp (+57 304 365 6226). Atiendo en español e inglés, comparto soportes al día y coordinamos visita presencial o videollamada.</p>
+        <p data-i18n="ctaDesc">Escríbeme directo por WhatsApp (contacto protegido contra spam). Atiendo en español e inglés, comparto soportes al día y coordinamos visita presencial o videollamada.</p>
       </div>
       <div class="cta-row">
-        <a class="btn btn-primary wa-link" href="https://wa.me/573043656226" target="_blank" rel="noopener" data-i18n="ctaBtn1">Hablar con el propietario</a>
+        <button type="button" class="btn btn-primary wa-link" onclick="openContactModal(event)" data-i18n="ctaBtn1">Hablar con el propietario</button>
         <a class="btn btn-outline" id="pdf-btn-2" href="docs/Frontier_Ficha_ES.pdf" target="_blank" rel="noopener" data-i18n="ctaBtn2">Ver Ficha PDF</a>
       </div>
     </div>
@@ -1163,10 +1251,28 @@
 </main>
 
 <footer data-i18n="footerNote">
-  *Las cifras en USD son una referencia aproximada calculada con TRM ~COP 3.462/USD (nov. 2026); el precio vinculante de venta está expresado en pesos colombianos (COP $370.000.000). Área privada según certificado de tradición: 33,46 m² (360 sq ft); área construida según avalúo: 36,30 m² (391 sq ft). Entrega desocupado, sin muebles. Nota sobre visas: por sí solo este valor está por debajo del umbral de 350 SMMLV para Visa M de inversionista en Colombia. Contacto directo: WhatsApp +57 304 365 6226.
+  *Las cifras en USD son una referencia aproximada calculada con TRM ~COP 3.462/USD (nov. 2026); el precio vinculante de venta está expresado en pesos colombianos (COP $370.000.000). Área privada según certificado de tradición: 33,46 m² (360 sq ft); área construida según avalúo: 36,30 m² (391 sq ft). Entrega desocupado, sin muebles. Nota sobre visas: por sí solo este valor está por debajo del umbral de 350 SMMLV para Visa M de inversionista en Colombia. Contacto directo con el propietario protegido contra bots mediante el botón de WhatsApp.
 </footer>
 
-<a class="float-wa wa-link" href="https://wa.me/573043656226" target="_blank" rel="noopener" data-i18n="floatWa">WhatsApp · Propietario</a>
+<button type="button" class="float-wa wa-link" style="border:0;cursor:pointer;" onclick="openContactModal(event)" data-i18n="floatWa">WhatsApp · Propietario</button>
+
+<!-- ANTI-BOT CONTACT MODAL -->
+<div class="c-modal-backdrop" id="contact-modal" onclick="if(event.target===this) closeContactModal()">
+  <div class="c-modal" role="dialog" aria-modal="true">
+    <button type="button" class="c-modal-x" onclick="closeContactModal()" aria-label="Close">&times;</button>
+    <h3 data-i18n="cmTitle">Contacto directo con el propietario</h3>
+    <p data-i18n="cmDesc">Para evitar spam automatizado, confirma que eres una persona real para habilitar el enlace directo a WhatsApp o revelar el número.</p>
+    <label class="human-check">
+      <input type="checkbox" id="human-chk" onchange="toggleHumanCheck(event)">
+      <span data-i18n="cmCheck">Soy una persona real (no soy un bot)</span>
+    </label>
+    <div class="c-modal-actions">
+      <button type="button" id="cm-wa-btn" class="btn btn-primary btn-disabled" onclick="launchProtectedWa(event)" data-i18n="cmOpenWa">Abrir chat en WhatsApp</button>
+      <button type="button" id="cm-rev-btn" class="btn btn-outline-dark btn-disabled" onclick="revealProtectedPhone(event)" data-i18n="cmReveal">Mostrar número telefónico</button>
+      <div class="revealed-num" id="cm-revealed"></div>
+    </div>
+  </div>
+</div>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="if(event.target===this) closeLb()">
@@ -1398,16 +1504,21 @@ const COPY = {
     mapEye: 'Ubicación exacta del edificio',
     mapTitle: 'Barrio San Martín · Centro Internacional, Bogotá',
     ctaTitle: '¿Te gustaría visitarlo o agendar un tour en vivo por video?',
-    ctaDesc: 'Escríbeme directo por WhatsApp (+57 304 365 6226). Atiendo en español e inglés y comparto soportes al día sin intermediarios.',
+    ctaDesc: 'Escríbeme directo por WhatsApp (contacto protegido contra spam). Atiendo en español e inglés y comparto soportes al día sin intermediarios.',
     ctaBtn1: 'Hablar con el propietario',
     ctaBtn2: 'Ver Ficha PDF (ES)',
     floatWa: 'WhatsApp · Propietario',
+    cmTitle: 'Contacto directo con el propietario',
+    cmDesc: 'Para evitar spam automatizado de bots, confirma que eres una persona real para abrir el chat de WhatsApp o mostrar el número.',
+    cmCheck: 'Soy una persona real (no soy un bot)',
+    cmOpenWa: 'Abrir chat en WhatsApp',
+    cmReveal: 'Mostrar número telefónico',
     tagRef: 'Referencia amoblado',
     tagEmpty: 'Sin muebles',
     tagPlan: 'Plano referencia',
     pdfHref: 'docs/Frontier_Ficha_ES.pdf',
     waMsg: 'Hola, vi la página del apartaestudio en Edificio Frontier ($370M) y me gustaría recibir más información / agendar visita.',
-    footerNote: '*Las cifras en USD son una referencia aproximada calculada con TRM ~COP 3.462/USD (nov. 2026); el precio vinculante de venta está expresado en pesos colombianos (COP $370.000.000). Área privada según certificado de tradición: 33,46 m² (360 sq ft); área construida según avalúo: 36,30 m² (391 sq ft). Entrega desocupado, sin muebles. Nota sobre visas: por sí solo este valor está por debajo del umbral de 350 SMMLV para Visa M de inversionista en Colombia. Contacto directo: WhatsApp +57 304 365 6226.'
+    footerNote: '*Las cifras en USD son una referencia aproximada calculada con TRM ~COP 3.462/USD (nov. 2026); el precio vinculante de venta está expresado en pesos colombianos (COP $370.000.000). Área privada según certificado de tradición: 33,46 m² (360 sq ft); área construida según avalúo: 36,30 m² (391 sq ft). Entrega desocupado, sin muebles. Nota sobre visas: por sí solo este valor está por debajo del umbral de 350 SMMLV para Visa M de inversionista en Colombia. Contacto directo protegido contra bots mediante el botón de WhatsApp.'
   },
   en: {
     badge1: 'For Sale By Owner · 0% Broker Fee',
@@ -1529,16 +1640,21 @@ const COPY = {
     mapEye: 'Building Location',
     mapTitle: 'San Martín · Centro Internacional, Bogotá',
     ctaTitle: 'Want an in-person viewing or a live video walkthrough?',
-    ctaDesc: 'Message me directly on WhatsApp (+57 304 365 6226). I reply in English & Spanish and can share full documentation directly.',
+    ctaDesc: 'Message me directly on WhatsApp (spam-protected owner contact). I reply in English & Spanish and can share full documentation directly.',
     ctaBtn1: 'Chat with Owner on WhatsApp',
     ctaBtn2: 'Open English PDF',
     floatWa: 'WhatsApp · Owner',
+    cmTitle: 'Direct Owner Contact',
+    cmDesc: 'To prevent automated bot spam, please confirm you are a real person to open the direct WhatsApp chat or reveal the phone number.',
+    cmCheck: 'I am a real person (not a bot)',
+    cmOpenWa: 'Open WhatsApp Chat',
+    cmReveal: 'Reveal phone number',
     tagRef: 'Furnished ref.',
     tagEmpty: 'Unfurnished',
     tagPlan: 'Floor plan',
     pdfHref: 'docs/Frontier_Brochure_EN.pdf',
     waMsg: 'Hi! I saw the Frontier Building loft studio listing (COP 370M / ~$106.9k) and would like more details or to schedule a viewing / live video tour.',
-    footerNote: '*USD figures are approximate reference conversions based on Colombia’s official TRM (~COP 3,462/USD, Nov 2026); the binding sale price is in Colombian Pesos (COP 370,000,000). Registered private area is 33.46 m² (360 sq ft) per title deed and 36.30 m² (391 sq ft) built per appraisal. Delivered vacant & unfurnished. Visa note: standalone price is below Colombia’s 350 SMMLV Investor M-Visa threshold. Direct owner WhatsApp: +57 304 365 6226.'
+    footerNote: '*USD figures are approximate reference conversions based on Colombia’s official TRM (~COP 3,462/USD, Nov 2026); the binding sale price is in Colombian Pesos (COP 370,000,000). Registered private area is 33.46 m² (360 sq ft) per title deed and 36.30 m² (391 sq ft) built per appraisal. Delivered vacant & unfurnished. Visa note: standalone price is below Colombia’s 350 SMMLV Investor M-Visa threshold. Direct owner contact is bot-protected via the WhatsApp button.'
   }
 };
 
@@ -1709,14 +1825,65 @@ function setLang(lang) {
   document.getElementById('pdf-btn').href = c.pdfHref;
   document.getElementById('pdf-btn-2').href = c.pdfHref;
 
-  const waUrl = 'https://wa.me/573043656226?text=' + encodeURIComponent(c.waMsg);
-  document.querySelectorAll('.wa-link').forEach(a => a.href = waUrl);
-
   renderGallery();
   renderZones();
   renderFuture();
   renderInvestor();
   try { localStorage.setItem('frontier_lang', lang); } catch(e) {}
+}
+
+// XOR + Base64 obfuscated contact payload (decrypted only in memory after trusted user gesture)
+const _CP = ['fCRoG0U', 'NfyNvHUML'];
+const _CK = [73, 19, 91, 42, 117, 63];
+let _humanVerified = false;
+
+function _decodeContact() {
+  const bin = atob(_CP.join(''));
+  let out = '';
+  for (let i = 0; i < bin.length; i++) {
+    out += String.fromCharCode(bin.charCodeAt(i) ^ _CK[i % _CK.length]);
+  }
+  return out;
+}
+
+function openContactModal(ev) {
+  if (ev && ev.isTrusted === false) return;
+  _humanVerified = false;
+  const chk = document.getElementById('human-chk');
+  chk.checked = false;
+  document.getElementById('cm-wa-btn').classList.add('btn-disabled');
+  document.getElementById('cm-rev-btn').classList.add('btn-disabled');
+  const rev = document.getElementById('cm-revealed');
+  rev.textContent = '';
+  rev.classList.remove('show');
+  document.getElementById('contact-modal').classList.add('open');
+}
+
+function closeContactModal() {
+  document.getElementById('contact-modal').classList.remove('open');
+}
+
+function toggleHumanCheck(ev) {
+  if (ev && ev.isTrusted === false) return;
+  _humanVerified = Boolean(document.getElementById('human-chk').checked);
+  document.getElementById('cm-wa-btn').classList.toggle('btn-disabled', !_humanVerified);
+  document.getElementById('cm-rev-btn').classList.toggle('btn-disabled', !_humanVerified);
+}
+
+function launchProtectedWa(ev) {
+  if (!_humanVerified || (ev && ev.isTrusted === false)) return;
+  const num = _decodeContact();
+  const msg = encodeURIComponent(COPY[currentLang].waMsg);
+  window.open('https://wa.me/' + num + '?text=' + msg, '_blank', 'noopener,noreferrer');
+}
+
+function revealProtectedPhone(ev) {
+  if (!_humanVerified || (ev && ev.isTrusted === false)) return;
+  const num = _decodeContact();
+  const formatted = '+' + num.slice(0,2) + ' ' + num.slice(2,5) + ' ' + num.slice(5,8) + ' ' + num.slice(8);
+  const el = document.getElementById('cm-revealed');
+  el.textContent = formatted;
+  el.classList.add('show');
 }
 
 function openLb(source, idx) {
