@@ -534,6 +534,198 @@
     line-height: 1.48;
   }
 
+  /* Investor Data & Yield Calculator Section */
+  .inv-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .inv-kpi {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-top: 3.5px solid var(--gold);
+    border-radius: 12px;
+    padding: 15px 14px;
+    box-shadow: var(--shadow);
+  }
+  .inv-kpi .iv {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--brand);
+    line-height: 1.18;
+  }
+  .inv-kpi .il {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 5px;
+    line-height: 1.38;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 18px;
+  }
+  table.comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 620px;
+  }
+  table.comp-table th {
+    background: var(--brand);
+    color: #fff;
+    text-align: left;
+    padding: 11px 13px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.4px;
+  }
+  table.comp-table td {
+    padding: 10px 13px;
+    border-bottom: 1px solid var(--line);
+    color: #243b42;
+  }
+  table.comp-table tr.highlight td {
+    background: #eef6f3;
+    font-weight: 700;
+    color: var(--brand);
+  }
+  table.comp-table tr:last-child td { border-bottom: 0; }
+
+  .walk-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .walk-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 15px 17px;
+    box-shadow: var(--shadow);
+  }
+  .walk-card h4 {
+    margin: 0 0 8px;
+    font-size: 0.96rem;
+    color: var(--brand);
+  }
+  .walk-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 0.86rem;
+    padding: 5px 0;
+    border-bottom: 1px dashed #e2eae8;
+    color: #2c434a;
+  }
+  .walk-row:last-child { border-bottom: 0; }
+  .walk-time {
+    font-weight: 700;
+    color: #165e49;
+    white-space: nowrap;
+  }
+
+  .calc-box {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+    box-shadow: var(--shadow);
+    margin-bottom: 14px;
+  }
+  .calc-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .calc-head h3 {
+    margin: 0;
+    font-size: 1.12rem;
+    color: var(--brand);
+  }
+  .preset-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .preset-btn {
+    border: 1px solid #c5d8d4;
+    background: #f2f7f5;
+    color: var(--brand);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 7px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .preset-btn.active {
+    background: var(--brand);
+    color: var(--gold-light);
+    border-color: var(--brand);
+  }
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 22px;
+    align-items: start;
+  }
+  .slider-group { margin-bottom: 14px; }
+  .slider-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .slider-val { color: #165e49; }
+  .slider-group input[type=range] {
+    width: 100%;
+    accent-color: var(--brand);
+    cursor: pointer;
+  }
+  .calc-results {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-soft) 100%);
+    color: #fff;
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .res-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .res-item {
+    background: rgba(255,255,255,0.09);
+    border-radius: 9px;
+    padding: 11px 12px;
+  }
+  .res-item .rv {
+    font-size: 1.22rem;
+    font-weight: 800;
+    color: var(--gold-light);
+    line-height: 1.15;
+  }
+  .res-item .rl {
+    font-size: 0.76rem;
+    color: #d6e5e3;
+    margin-top: 4px;
+  }
+  .res-sub {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: #cfe0dd;
+    line-height: 1.45;
+  }
+
   /* Safe Foreign Purchase Steps */
   .steps {
     display: grid;
@@ -663,8 +855,8 @@
 
   /* Responsive */
   @media (max-width: 860px) {
-    .kpi-grid, .steps { grid-template-columns: repeat(2, 1fr); }
-    .gallery, .grid-2, .zones-grid, .future-stats, .render-grid { grid-template-columns: 1fr; }
+    .kpi-grid, .steps, .inv-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery, .grid-2, .zones-grid, .future-stats, .render-grid, .walk-grid, .calc-grid { grid-template-columns: 1fr; }
     .hero { min-height: 480px; }
   }
 </style>
@@ -797,6 +989,76 @@
 
     <div class="notice" data-i18n="futNotice">
       <strong>Nota de fuentes oficiales:</strong> Las visualizaciones y fotografías de esta sección provienen directamente de los portales institucionales de la Alcaldía Mayor de Bogotá (<strong>RenoBo</strong> y <strong>Bogota.gov.co</strong>) y se presentan como referencia informativa del entorno urbano (no constituyen obras a cargo del vendedor ni promesa de valorización).
+    </div>
+  </section>
+
+  <!-- INVESTOR DATA & ZONE METRICS -->
+  <section class="block" id="datos-inversionista">
+    <div class="eyebrow" data-i18n="invEye">Análisis para inversionistas · San Martín / Centro Internacional</div>
+    <h2 class="sec-title" data-i18n="invTitle">Datos de la zona, comparables y simulador de rentabilidad</h2>
+    <p class="sec-lead" data-i18n="invLead">Cifras de mercado observadas en el sector para evaluar ticket de entrada, costos fijos, demanda de arriendo y flujo neto antes de agendar visita.</p>
+
+    <div class="inv-kpi-grid" id="inv-kpi-grid"></div>
+
+    <div class="table-wrap">
+      <table class="comp-table" id="comp-table"></table>
+    </div>
+
+    <div class="walk-grid" id="walk-grid"></div>
+
+    <div class="calc-box">
+      <div class="calc-head">
+        <h3 data-i18n="calcTitle">Simulador interactivo de flujo de caja y Cap Rate</h3>
+        <div class="preset-btns">
+          <button type="button" class="preset-btn active" id="pre-trad" onclick="applyPreset('trad')" data-i18n="preTrad">Escenario tradicional ($2,2M)</button>
+          <button type="button" class="preset-btn" id="pre-furn" onclick="applyPreset('furn')" data-i18n="preFurn">Escenario amoblado ($3,1M)</button>
+        </div>
+      </div>
+      <div class="calc-grid">
+        <div>
+          <div class="slider-group">
+            <div class="slider-label"><span data-i18n="slPriceLbl">Precio de compra (COP)</span><span class="slider-val" id="val-price">$370.000.000</span></div>
+            <input type="range" id="sl-price" min="340000000" max="370000000" step="1000000" value="370000000" oninput="calcYield()">
+          </div>
+          <div class="slider-group">
+            <div class="slider-label"><span data-i18n="slRentLbl">Canon mensual estimado (COP)</span><span class="slider-val" id="val-rent">$2.200.000</span></div>
+            <input type="range" id="sl-rent" min="1700000" max="3500000" step="50000" value="2200000" oninput="calcYield()">
+          </div>
+          <div class="slider-group">
+            <div class="slider-label"><span data-i18n="slOccLbl">Ocupación anual estimada</span><span class="slider-val" id="val-occ">92% (11 meses)</span></div>
+            <input type="range" id="sl-occ" min="75" max="100" step="1" value="92" oninput="calcYield()">
+          </div>
+          <div class="slider-group" style="margin-bottom:0;">
+            <div class="slider-label"><span data-i18n="slExpLbl">Gastos mensuales del propietario (admin. $234k + predial/mant.)</span><span class="slider-val" id="val-exp">$384.000</span></div>
+            <input type="range" id="sl-exp" min="234000" max="650000" step="10000" value="384000" oninput="calcYield()">
+          </div>
+        </div>
+        <div class="calc-results">
+          <div class="res-grid">
+            <div class="res-item">
+              <div class="rv" id="out-gross-yield">6.6%</div>
+              <div class="rl" data-i18n="resGrossY">Rentabilidad bruta anual</div>
+            </div>
+            <div class="res-item">
+              <div class="rv" id="out-cap-rate">5.3%</div>
+              <div class="rl" data-i18n="resCap">Cap Rate neto estimado</div>
+            </div>
+            <div class="res-item">
+              <div class="rv" id="out-noi-cop">$19,7M</div>
+              <div class="rl" data-i18n="resNoiCop">Flujo neto anual (NOI · COP)</div>
+            </div>
+            <div class="res-item">
+              <div class="rv" id="out-noi-usd">~$5,690</div>
+              <div class="rl" data-i18n="resNoiUsd">Flujo neto anual (≈ USD*)</div>
+            </div>
+          </div>
+          <div class="res-sub" id="out-summary"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notice" data-i18n="invNotice">
+      <strong>Nota para inversionistas:</strong> Los comparables corresponden a precios públicos de anuncio en el edificio y sector (oct. 2026), no a cierres escriturados. El simulador es únicamente una herramienta orientativa editable por el usuario y <strong>no constituye promesa ni garantía de rentabilidad</strong>. El apartamento se entrega sin muebles; el escenario amoblado requeriría inversión adicional en mobiliario y verificación del Reglamento de Propiedad Horizontal para cualquier uso distinto a renta tradicional.
     </div>
   </section>
 
@@ -1003,6 +1265,51 @@ const COPY = {
       { v: 'Sep. 2027 / Mar. 2028', l: 'Marcha blanca (pruebas) prevista para septiembre de 2027 y operación comercial proyectada para marzo de 2028.' },
       { v: 'Nodo multimodal', l: 'Cercanía caminable a la Av. Caracas (Cll. 32–34) y la Estación Central Cll. 26 (Metro + TransMilenio + RegioTram).' }
     ],
+    invEye: 'Análisis para inversionistas · San Martín / Centro Internacional',
+    invTitle: 'Datos de la zona, comparables y simulador de rentabilidad',
+    invLead: 'Cifras de mercado observadas en el sector para evaluar ticket de entrada, costos fijos, demanda de arriendo y flujo neto antes de agendar visita.',
+    invKpis: [
+      { v: '~12% anual', l: 'Dinámica reportada de valorización en predios a <1 km del trazado del Metro en Santa Fe vs. ~5% promedio ciudad (reportes del sector).' },
+      { v: '$1,8M – $3,5M', l: 'Rango observado de arriendo mensual en San Martín / Centro Internacional (sin muebles $1,8M–$2,6M · amoblado $3,1M–$3,5M).' },
+      { v: '$1,68M–$2,21M/año', l: 'Ahorro directo en administración frente a unidades comparables del mismo edificio y sector ($234k vs. $374k–$418k/mes).' },
+      { v: 'Estrato 4 · 0% fee', l: 'Costos operativos contenidos frente a estratos 5–6 y compra directa al propietario sin sobrecosto de intermediación.' }
+    ],
+    compHeaders: ['Unidad de referencia (oferta observada)', 'Precio oferta', 'Área', 'Baños · Garaje', 'Admin./mes'],
+    compRows: [
+      { hi: true, cols: ['Frontier Piso 6 (Esta unidad)', '$370M COP', '36,3 m² const.', '2 baños · 1 garaje', '$234.000'] },
+      { hi: false, cols: ['Frontier Piso 16 (ref. portal)', '$519M COP', '53 m² const.', '2 baños · 1 garaje', '$395.000'] },
+      { hi: false, cols: ['Frontier Piso 15 (ref. portal)', '$540M COP', '50 m² const.', '1 baño · 1 garaje', '$374.000'] },
+      { hi: false, cols: ['Urban San Martín (ref. portal)', '$420M COP', '39 m² priv.', '1 baño · 1 garaje', '$418.000'] },
+      { hi: false, cols: ['San Martín Piso 13 (ref. portal)', '$350M COP', '32,3 m²', '1 baño · Sin garaje', '$200.000'] }
+    ],
+    walkCards: [
+      { h: 'Motores corporativos y conectividad', rows: [
+        ['C.C. San Martín / Carrera 7.ª', '1–2 min a pie'],
+        ['Centro Internacional / Ecopetrol / Bavaria', '5–10 min a pie'],
+        ['Corredor Metro Av. Caracas (Cll. 32–34)', '7–9 min a pie'],
+        ['Torre Atrio / Estación Central Metro Cll. 26', '10–12 min a pie'],
+        ['Aeropuerto El Dorado (eje directo Calle 26)', '25–35 min en carro']
+      ]},
+      { h: 'Demanda universitaria, cultural y gastronómica', rows: [
+        ['Parque Nacional Enrique Olaya Herrera', '5 min a pie'],
+        ['Museo Nacional y zona gastronómica La Macarena', '6–8 min a pie'],
+        ['CESA / U. Javeriana / U. Distrital', '8–14 min a pie'],
+        ['U. Jorge Tadeo Lozano / U. de los Andes', '14–18 min a pie'],
+        ['Perfil inquilino típico', 'Ejecutivos, expats y posgrados']
+      ]}
+    ],
+    calcTitle: 'Simulador interactivo de flujo de caja y Cap Rate',
+    preTrad: 'Tradicional sin muebles ($2,2M)',
+    preFurn: 'Amoblado corporativo ($3,1M)',
+    slPriceLbl: 'Precio de compra (COP)',
+    slRentLbl: 'Canon mensual estimado (COP)',
+    slOccLbl: 'Ocupación anual estimada',
+    slExpLbl: 'Gastos fijos mensuales (admin. $234k + predial/mant.)',
+    resGrossY: 'Rentabilidad bruta anual',
+    resCap: 'Cap Rate neto estimado',
+    resNoiCop: 'Flujo neto anual (NOI · COP)',
+    resNoiUsd: 'Flujo neto anual (≈ USD*)',
+    invNotice: '<strong>Nota para inversionistas:</strong> Los comparables corresponden a precios públicos de anuncio en el edificio y sector (oct. 2026), no a cierres escriturados. El simulador es únicamente una herramienta orientativa editable por el usuario y <strong>no constituye promesa ni garantía de rentabilidad</strong>. El apartamento se entrega sin muebles; el escenario amoblado requeriría inversión adicional en mobiliario y verificación del Reglamento de Propiedad Horizontal para cualquier uso distinto a renta tradicional.',
     safeEye: 'Trato directo · 0% comisión',
     safeTitle: 'Compra directa y segura (en Colombia o desde el exterior)',
     safeLead: 'Evita sobrecostos de intermediación con total transparencia jurídica. Bienvenido tu abogado inmobiliario independiente.',
@@ -1086,6 +1393,51 @@ const COPY = {
       { v: 'Sep 2027 / Mar 2028', l: 'Official testing phase scheduled for September 2027 and full commercial passenger launch targeted for March 2028.' },
       { v: 'Multimodal Hub', l: 'Walkable access to Avenida Caracas (32nd–34th St) and Estación Central at 26th St (Metro + TransMilenio + RegioTram).' }
     ],
+    invEye: 'Real Estate Investor Data · San Martín / Centro Internacional',
+    invTitle: 'Zone Metrics, Market Comparables & Interactive Yield Calculator',
+    invLead: 'Observed local market benchmarks to evaluate entry ticket, holding costs, rental demand drivers and estimated net cash flow before booking a tour.',
+    invKpis: [
+      { v: '~12% / yr', l: 'Reported annual appreciation pace for properties within 1 km of the Bogotá Metro line in Santa Fe vs. ~5% city average (market reports).' },
+      { v: '$520 – $1,010/mo', l: 'Observed monthly studio rent range in San Martín / Centro Internacional (unfurnished COP 1.8M–2.6M · furnished COP 3.1M–3.5M).' },
+      { v: '~$485–$638/yr', l: 'Direct annual HOA savings vs. comparable Frontier & Urban units ($68/mo vs. $108–$121/mo), flowing straight to net yield.' },
+      { v: 'Estrato 4 · 0% fee', l: 'Lower utility/operating overhead than Estrato 5–6 districts plus zero broker commission buying directly from owner.' }
+    ],
+    compHeaders: ['Reference Unit (Observed Asking)', 'Asking Price', 'Size', 'Baths · Parking', 'Monthly HOA'],
+    compRows: [
+      { hi: true, cols: ['Frontier 6th Floor (This Unit)', 'COP 370M (~$106.9k)', '391 sq ft (36.3 m²)', '2 baths · 1 garage', 'COP 234k (~$68)'] },
+      { hi: false, cols: ['Frontier 16th Floor (listing ref.)', 'COP 519M (~$149.9k)', '570 sq ft (53 m²)', '2 baths · 1 garage', 'COP 395k (~$114)'] },
+      { hi: false, cols: ['Frontier 15th Floor (listing ref.)', 'COP 540M (~$156.0k)', '538 sq ft (50 m²)', '1 bath · 1 garage', 'COP 374k (~$108)'] },
+      { hi: false, cols: ['Urban San Martín (listing ref.)', 'COP 420M (~$121.3k)', '420 sq ft (39 m²)', '1 bath · 1 garage', 'COP 418k (~$121)'] },
+      { hi: false, cols: ['San Martín 13th Floor (listing ref.)', 'COP 350M (~$101.1k)', '348 sq ft (32.3 m²)', '1 bath · No parking', 'COP 200k (~$58)'] }
+    ],
+    walkCards: [
+      { h: 'Corporate Demand & Transit Connectivity', rows: [
+        ['San Martín Mall / Carrera 7', '1–2 min walk'],
+        ['Centro Internacional / Ecopetrol / Bavaria', '5–10 min walk'],
+        ['Av. Caracas Metro Corridor (32nd–34th St)', '7–9 min walk'],
+        ['Torre Atrio / Estación Central Metro (26th St)', '10–12 min walk'],
+        ['El Dorado Int’l Airport (direct Calle 26)', '25–35 min drive']
+      ]},
+      { h: 'University, Cultural & Dining Hub', rows: [
+        ['Parque Nacional', '5 min walk'],
+        ['Museo Nacional & La Macarena dining district', '6–8 min walk'],
+        ['CESA / Javeriana / Distrital Universities', '8–14 min walk'],
+        ['Jorge Tadeo Lozano / Los Andes Universities', '14–18 min walk'],
+        ['Core tenant profiles', 'Executives, expats & grad students']
+      ]}
+    ],
+    calcTitle: 'Interactive Cash Flow & Cap Rate Calculator',
+    preTrad: 'Unfurnished Long-Term (COP 2.2M)',
+    preFurn: 'Furnished Corporate (COP 3.1M)',
+    slPriceLbl: 'Purchase price (COP)',
+    slRentLbl: 'Expected monthly rent (COP)',
+    slOccLbl: 'Estimated annual occupancy',
+    slExpLbl: 'Monthly owner expenses (HOA COP 234k + tax/maint.)',
+    resGrossY: 'Estimated Gross Yield',
+    resCap: 'Estimated Net Cap Rate',
+    resNoiCop: 'Est. Annual NOI (COP)',
+    resNoiUsd: 'Est. Annual NOI (≈ USD*)',
+    invNotice: '<strong>Investor disclaimer:</strong> Market comparables reflect publicly observed asking prices in the building and neighborhood (Oct 2026), not recorded closing deeds. This calculator is an interactive estimation tool with user-adjustable assumptions and <strong>does not constitute a guarantee of return</strong>. The unit is sold unfurnished; a furnished rental strategy requires additional furnishing capex and checking the building’s HOA bylaws for any non-standard lease terms.',
     safeEye: 'Direct Owner Sale · Zero Commission',
     safeTitle: 'Safe Direct Purchase for Foreign & Overseas Buyers',
     safeLead: 'Skip the 3% agency markup without sacrificing legal peace of mind. Your independent bilingual real estate attorney is welcome at every step.',
@@ -1169,6 +1521,77 @@ function renderFuture() {
   }).join('');
 }
 
+function renderInvestor() {
+  const c = COPY[currentLang];
+  document.getElementById('inv-kpi-grid').innerHTML = c.invKpis.map(k => `
+    <div class="inv-kpi">
+      <div class="iv">${k.v}</div>
+      <div class="il">${k.l}</div>
+    </div>`).join('');
+
+  const th = `<thead><tr>${c.compHeaders.map(h => `<th>${h}</th>`).join('')}</tr></thead>`;
+  const tb = `<tbody>${c.compRows.map(r => `<tr class="${r.hi ? 'highlight' : ''}">${r.cols.map(col => `<td>${col}</td>`).join('')}</tr>`).join('')}</tbody>`;
+  document.getElementById('comp-table').innerHTML = th + tb;
+
+  document.getElementById('walk-grid').innerHTML = c.walkCards.map(w => `
+    <div class="walk-card">
+      <h4>${w.h}</h4>
+      ${w.rows.map(r => `<div class="walk-row"><span>${r[0]}</span><span class="walk-time">${r[1]}</span></div>`).join('')}
+    </div>`).join('');
+
+  calcYield();
+}
+
+function applyPreset(mode) {
+  document.getElementById('pre-trad').classList.toggle('active', mode === 'trad');
+  document.getElementById('pre-furn').classList.toggle('active', mode === 'furn');
+  if (mode === 'trad') {
+    document.getElementById('sl-rent').value = 2200000;
+    document.getElementById('sl-occ').value = 92;
+    document.getElementById('sl-exp').value = 384000;
+  } else {
+    document.getElementById('sl-rent').value = 3100000;
+    document.getElementById('sl-occ').value = 85;
+    document.getElementById('sl-exp').value = 500000;
+  }
+  calcYield();
+}
+
+function fmtCop(n) {
+  return '$' + Math.round(n).toLocaleString('es-CO');
+}
+
+function calcYield() {
+  const TRM = 3462;
+  const price = Number(document.getElementById('sl-price').value);
+  const rent = Number(document.getElementById('sl-rent').value);
+  const occ = Number(document.getElementById('sl-occ').value);
+  const exp = Number(document.getElementById('sl-exp').value);
+
+  const months = (occ / 100 * 12).toFixed(1);
+  document.getElementById('val-price').textContent = `${fmtCop(price)} (≈ USD $${Math.round(price / TRM).toLocaleString('en-US')})`;
+  document.getElementById('val-rent').textContent = `${fmtCop(rent)} (≈ USD $${Math.round(rent / TRM).toLocaleString('en-US')})`;
+  document.getElementById('val-occ').textContent = currentLang === 'es' ? `${occ}% (${months} meses/año)` : `${occ}% (${months} mos/yr)`;
+  document.getElementById('val-exp').textContent = `${fmtCop(exp)} (≈ USD $${Math.round(exp / TRM).toLocaleString('en-US')})`;
+
+  const grossAnnual = rent * 12 * (occ / 100);
+  const expAnnual = exp * 12;
+  const noiAnnual = Math.max(0, grossAnnual - expAnnual);
+  const grossYield = (grossAnnual / price) * 100;
+  const capRate = (noiAnnual / price) * 100;
+  const noiUsd = noiAnnual / TRM;
+
+  document.getElementById('out-gross-yield').textContent = grossYield.toFixed(1) + '%';
+  document.getElementById('out-cap-rate').textContent = capRate.toFixed(1) + '%';
+  document.getElementById('out-noi-cop').textContent = '$' + (noiAnnual / 1e6).toFixed(1) + 'M';
+  document.getElementById('out-noi-usd').textContent = '~$' + Math.round(noiUsd).toLocaleString('en-US');
+
+  const monthlyNet = noiAnnual / 12;
+  document.getElementById('out-summary').innerHTML = currentLang === 'es'
+    ? `Ingreso bruto anual estimado: <strong>${fmtCop(grossAnnual)}</strong> · Gastos anuales: <strong>${fmtCop(expAnnual)}</strong> · Flujo neto mensual promedio: <strong>${fmtCop(monthlyNet)}</strong> (sin incluir potencial valorización del corredor Metro 2028).`
+    : `Est. annual gross income: <strong>${fmtCop(grossAnnual)}</strong> · Annual expenses: <strong>${fmtCop(expAnnual)}</strong> · Avg. monthly net cash flow: <strong>${fmtCop(monthlyNet)} (≈ USD $${Math.round(monthlyNet / TRM).toLocaleString('en-US')})</strong> before any potential 2028 Metro corridor appreciation.`;
+}
+
 function setLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -1200,6 +1623,7 @@ function setLang(lang) {
   renderGallery();
   renderZones();
   renderFuture();
+  renderInvestor();
   try { localStorage.setItem('frontier_lang', lang); } catch(e) {}
 }
 
